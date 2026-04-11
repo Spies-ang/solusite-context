@@ -211,3 +211,47 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 ## SILVERBROOK MEDIA (FIANCÉE'S BUSINESS)
 
 Social media management. Higher-budget targets for social media pitch: hotels, event venues, tour operators, travel agencies, spas, restaurants, wedding photographers, real estate agents, interior designers, architects. Stage 1c scraper (social media presence check) deferred until Ian validates the website pitch through real calls.
+
+---
+
+## RECYCLING LESSONS — B&B Archetype (Villa 442, April 2026)
+
+First full recycle of the B&B archetype (Garden Point → Villa 442). Identified three categories of issues that must be fixed in every archetype template before it's truly reusable:
+
+### Issue 1: Hardcoded content outside siteConfig
+Several components had business-specific strings hardcoded directly instead of reading from siteConfig:
+- Home.tsx trust bar: "6 rooms", "Pet-friendly" — hardcoded from Garden Point
+- Rooms.tsx hero: "Six rooms, one peaceful retreat" — hardcoded
+- Location.tsx: "From Johannesburg CBD", "From Sandton" with Garden Point distances — hardcoded
+
+**Fix applied:** Added `trustBar` (array), `roomsHeroTitle` (string), and `directions` (array of objects) to siteConfig. Components now map over these arrays. Every archetype template must be audited for hardcoded strings before it's marked as "template-ready".
+
+### Issue 2: Empty fields rendering as blank UI elements
+When siteConfig fields are empty strings (email, Instagram, Facebook), the Footer still rendered the link/icon with no content — creating visible blank spaces.
+
+**Fix applied:** Wrapped email, Instagram, and Facebook in conditional renders: `{siteConfig.email && (...)}`. Rule going forward: every optional field in siteConfig must have conditional rendering in the component that displays it. If it's empty, it should not render at all.
+
+### Issue 3: Images not transferable
+Components imported local image files (e.g. `import heroImg from "@/assets/hero-garden.jpg"`). These break on every recycle because the files are specific to the original client.
+
+**Fix applied:** Added an `images` object to siteConfig with URL strings (using Unsplash stock photos). Components now read image URLs from siteConfig instead of importing local files. Each room object also has an `image` field. When recycling, just swap the Unsplash URLs to match the new client's industry/vibe. Zero credits needed.
+
+### Updated recycling checklist (B&B archetype)
+1. Clone/remix the archetype repo
+2. Replace ALL siteConfig.ts values with new client data
+3. Replace image URLs in siteConfig.images with industry-appropriate Unsplash photos
+4. Verify NO empty fields render as blank UI (check Footer especially)
+5. Verify NO hardcoded strings from the previous client remain (grep for old business name)
+6. Push to GitHub → Lovable auto-deploys
+7. Paste surgical color-swap prompt in Lovable (1 cheap credit)
+8. Send pre-call WhatsApp with preview link
+
+### Archetype template status update
+| Archetype | Template Repo | Status |
+|---|---|---|
+| Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | Roelf's complete, Riakona 80% |
+| Beauty & Wellness | `beauty-bloom-template` | Initial done, needs audit |
+| Events & Creative | `ross-images-studio` | Complete, template-ready |
+| Hotels & Hospitality (B&B) | `remix-of-bnb-archetype` | **Template-ready after Villa 442 fixes** |
+| Professional Services | MEG Architects | Built, needs templating |
+| Education & Training | Studentech | Built, needs templating |
