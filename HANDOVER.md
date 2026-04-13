@@ -1,5 +1,5 @@
 # SOLUSITE MEDIA — HANDOVER DOCUMENT
-**Last updated:** Saturday 12 April 2026 (afternoon)
+**Last updated:** Monday 13 April 2026
 **Bootstrap:** Paste this URL into any new Claude chat or Claude Code session:
 `https://raw.githubusercontent.com/Spies-ang/solusite-context/main/HANDOVER.md`
 
@@ -7,7 +7,7 @@
 
 ## WHO
 
-Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital marketing) alongside a day job as Data Engineer at Belgotex (Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server). Also runs Spies Construction and DFFRNT (athletic wear). Fiancée runs **Silverbrook Media** (social media management, shares pipeline infrastructure). Collaborator: **Markus** (lead handling). **NEW: hired a young salesman** to handle outbound sales calls — Ian builds and warms, salesman closes.
+Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital marketing) alongside a day job as Data Engineer at Belgotex (Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server). Also runs Spies Construction and DFFRNT (athletic wear). Fiancée runs **Silverbrook Media** (social media management, shares pipeline infrastructure). Collaborator: **Markus** (lead handling). **NEW: hired a young salesman** to handle closing calls after Ian's warm WhatsApp intro — Ian builds and warms, salesman closes.
 
 **Communication style:** Direct, concise, no preamble. Voice-to-text input. Only change what was asked. Never assume — ask. One consolidated answer beats three partial ones.
 
@@ -15,35 +15,36 @@ Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital ma
 
 ---
 
-## BUSINESS MODEL — TWO-STAGE SALES HANDOFF (NEW)
+## BUSINESS MODEL — TWO-STAGE SALES HANDOFF
 
-The flow as of 12 April 2026:
+The flow as of 13 April 2026:
 
 1. **Scrape & qualify** — Multi-stage Python scraper finds leads with website gaps
 2. **Build** — Recycle the matching archetype template, customize siteConfig.ts for the lead, push to GitHub, Lovable auto-deploys
 3. **Ian sends warm intro WhatsApp** — Personal hook + gap framing + live demo URL + "important to know" placeholder disclaimer + commits to a callback window. Stays in Ian's name to preserve the trust anchor ("a real person noticed me")
 4. **Ian sends salesman briefing card** — Structured summary of the lead so the salesman can dial cold-but-prepared
-5. **Salesman calls** — Opens with: "Hi, this is [name] from Solusite Media — Ian asked me to follow up on the website he sent you yesterday." This phrasing keeps Ian as the trust anchor and positions the salesman as a colleague
+5. **Salesman calls** — **Suggested opening template** (not law, adapt to the lead): "Hi, this is [name] from Solusite Media — Ian asked me to follow up on the website he sent you yesterday." This phrasing keeps Ian as the trust anchor and positions the salesman as a colleague.
 6. **Salesman closes the meeting**, not the deal — goal is a 30-45 min meeting where the client hands over real photos and details
 7. **Convert** to paying client + monthly retainer
 
 ### Pricing
-- Website build: R5,000–R12,000 once-off (varies by archetype — see below)
-- Monthly retainer: R500–R900/month (varies by archetype)
-- Blog add-on: R500/month for 2 SEO posts per site
-- Payment plan available — handle in negotiation
-- Never lead with price
 
-| Archetype | Build | Retainer | Anchor |
-|---|---|---|---|
-| Events & Creative | R8,500–R12,000 | R900 | R10,000 |
-| Hospitality (B&B, hotel) | R8,500–R12,000 | R900 | R10,000 |
-| Professional Services | R8,500–R12,000 | R900 | R12,000 (premium) |
-| Beauty & Wellness | R5,000–R7,500 | R700 | R6,500 |
-| Food & Restaurants | R5,000–R6,500 | R700 | R5,500 |
-| Health & Fitness | R5,000–R10,000 | R500–R800 | R7,500 |
-| Education & Training | R3,500–R6,500 | R500–R600 | R5,000 |
-| Trades | R5,000 | R700 | R5,000 |
+**All archetypes anchor at R5,000 once-off.** Frame it as: *"Our builds usually go for R8,500 — you're getting the introductory rate of R5,000."* Retainer varies per archetype (see table).
+
+**Fallback payment plan** (offer only if price is the blocker): R2,500 upfront + R2,500 on completion within 1 week.
+
+Blog add-on: R500/month for 2 SEO posts per site. Payment plan handled in negotiation. Never lead with price.
+
+| Archetype | Build | Retainer |
+|---|---|---|
+| Events & Creative | R5,000 | R900 |
+| Hospitality (B&B, hotel) | R5,000 | R900 |
+| Professional Services | R5,000 | R900 |
+| Beauty & Wellness | R5,000 | R700 |
+| Food & Restaurants | R5,000 | R700 |
+| Health & Fitness | R5,000 | R500–R800 |
+| Education & Training | R5,000 | R500–R600 |
+| Trades | R5,000 | R700 |
 
 ---
 
@@ -58,6 +59,8 @@ For every lead that gets a built demo site, generate TWO documents:
 - "Important to know" placeholder paragraph — explicitly flags photos, prices, hours as placeholders
 - Specific callback window: "Someone from our team will give you a call tomorrow between 10am and 12pm" (NOT "I'll call" — handoff is now to salesman)
 - Low-pressure close
+
+**Rule: never mention being Pretoria-based in client comms.** No "we're a Pretoria agency," no "local to you in Pretoria," no geographic framing at all. Solusite pitches as a capability, not a locality. Applies to WhatsApp messages, salesman scripts, demo site copy — everything client-facing.
 
 Stays in Ian's name. The "we" reframing happens naturally on the salesman's call, not in the WhatsApp.
 
@@ -79,13 +82,15 @@ The specific gap and why it costs them money/credibility/clients.
 Include math angle if possible (e.g. commission costs, lost SEO traffic).
 
 COMPETITIVE ADVANTAGES TO MENTION
-4-5 bullet points on why Solusite specifically (local, demo-first, archetype-tuned, etc.)
+4-5 bullet points on why Solusite specifically (demo-first, archetype-tuned, etc.)
+DO NOT mention Pretoria / geography.
 
 WHAT THEY ALREADY KNOW (from Ian's WhatsApp)
 What's been disclosed so the salesman doesn't repeat or contradict
 
 PRICING (KEEP IN HEAD, DON'T LEAD WITH IT)
-Anchor price + drop-to price + retainer + blog + payment plan note
+Anchor: R8,500. Actual: R5,000 introductory. Retainer per archetype.
+Fallback split: R2,500 upfront + R2,500 on completion within 1 week.
 
 THE CLOSE
 What the goal of this specific call is. Usually a meeting, not a deal.
@@ -114,10 +119,27 @@ This format is the standard. Every recycling chat output should include both doc
 - **Repo:** `github.com/Spies-ang/lead-scraper` (private)
 - **Output:** 11,120+ qualified leads across 67 industry tabs in Google Sheets `1yOjcFLNigV2Rg6PD5Ql5sDMQCOgY5_r0WPmZAJNLHeI`
 
-### V2 Lead Priority
+### V2 Lead Priority (by website gap)
 **TIER 1 HOT:** FACEBOOK_ONLY, BROKEN_WEBSITE, REDIRECTS_TO_FACEBOOK, new businesses (5-20 reviews)
 **TIER 2 WARM:** OLD_OR_BAD_WEBSITE, non-mobile-responsive, no SSL, placeholders
 **TIER 3 COLD:** Established no-website (50+ reviews) — V1 confirmed hardest sell
+
+### Industry Budget Filter (CRITICAL — apply before pulling leads)
+
+Website-gap tier alone is not enough. Industry determines whether the lead can actually pay. Close rate is **uncertain** across archetypes — conversion data is still thin — so prioritize industries with clear, per-customer revenue over industries with high need but thin margins.
+
+**DEPRIORITIZE (high need, lower budget, close rate unproven):**
+- Wellness studios, personal trainers, physiotherapists, yoga studios, small independent spas
+- These businesses often *need* a site more than anyone, but the monthly cash flow rarely supports a R5,000 build + R700 retainer without negotiation friction
+
+**PRIORITIZE (clear revenue per customer, defensible ROI pitch):**
+- **Hospitality with commission pain:** hotels, B&Bs, guesthouses, lodges — Booking.com/Airbnb commissions are a math-based pitch
+- **Professional services with project fees:** architects, lawyers, accountants, consulting firms, agencies
+- **Education with course fees:** driving schools, music schools, tutoring businesses, training providers
+- **Event-driven with per-booking revenue:** wedding photographers, event venues, catering, tour operators
+- **Restaurants** (established, not street-food tier)
+
+The scraper should filter on both gap tier AND industry category before a lead hits Ian's desk.
 
 ### Known Issues
 - Stage 2 v1 false positives — flags React/Next.js as BROKEN. Fix: Stage 2 v2 (Playwright). Deferred until calls validate.
@@ -139,7 +161,7 @@ This format is the standard. Every recycling chat output should include both doc
 
 ### Active recycling — IN PROGRESS
 - **Remix repo:** `Spies-ang/remix-of-bnb-archetype` (cloned from Garden Point template)
-- **Target lead:** **The Villa 442**, 442 Salie St, Chantelle, Akasia, Pretoria 0182. Phone 064 546 8891. 4.9 stars, 11 reviews. BROKEN_WEBSITE — their "website" is literally a Booking.com share link (https://www.booking.com/Share-9NNlQY). Same commission-dependency pitch as Garden Point. Local to Ian.
+- **Target lead:** **The Villa 442**, 442 Salie St, Chantelle, Akasia, Pretoria 0182. Phone 064 546 8891. 4.9 stars, 11 reviews. BROKEN_WEBSITE — their "website" is literally a Booking.com share link (https://www.booking.com/Share-9NNlQY). Same commission-dependency pitch as Garden Point.
 - **Status:** Recycling chat is currently working on this. Both repos need to be temporarily public for the chat to access them.
 
 ---
@@ -155,9 +177,9 @@ This format is the standard. Every recycling chat output should include both doc
 | Stefanie Ross Photography (V1) | Events & Creative | FACEBOOK_ONLY | DECLINED (fully booked) |
 
 **Validated learnings:**
-- Hospitality with commission pain is the strongest converting archetype so far
 - Always check the lead's recent Facebook activity before building (would have caught Prana Love closing)
-- Two pending callbacks are not failures — second attempts standard
+
+Sample size is too small to claim anything about which archetype converts best. Do not infer archetype performance from N=1.
 
 ---
 
@@ -257,9 +279,9 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 **Immediate (this weekend):**
 - [ ] Complete Villa 442 recycling (currently in recycling chat)
 - [ ] Generate Villa 442 WhatsApp + salesman briefing card (recycling chat job, must include both)
-- [ ] Call back MEG Architects + Studentech (salesman job, briefing cards already written above)
+- [ ] Call back MEG Architects + Studentech (salesman job, briefing cards already written)
 - [ ] Salesman closes Garden Point Guest House (briefing card already written)
-- [ ] Find and qualify next 3-5 leads for the salesman to keep momentum
+- [ ] Find and qualify next 3-5 leads for the salesman to keep momentum (filtered by industry budget rule above)
 
 **Short-term:**
 - [ ] Run Stage 2 v2 Playwright overnight (Saturday or Sunday night)
