@@ -163,11 +163,14 @@ The scraper should filter on both gap tier AND industry category before a lead h
 |---|---|---|---|---|---|
 | 1 | Education & Training | `Spies-ang/pass-prep-pro` | studentechdrivertraining.lovable.app | Pending callback | ✅ Hardened — commit `077d8a8` |
 | 2 | Food, Hospitality & Events | `Spies-ang/garden-gateways` | gardenpointguesthouse.lovable.app | DECLINED | ⚠️ Partial — Location.tsx needs per-repo fix (hardcoded city strings) |
-| 3 | Professional Services / Portfolio | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | Pending callback | ❌ NOT hardened — missing fields trigger Lovable auto-fix loop (overwrites team arrays) |
+| 3 | Professional Services / Portfolio | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | Pending callback | ❌ NOT hardened — missing fields trigger Lovable auto-fix loop (overwrites team arrays). ALSO: Practice page component has hardcoded MEG team names that ignore siteConfig.team entirely. |
 | 4 | Photography Studio | `Spies-ang/ross-images-studio` | — | Template-ready | ❌ NOT hardened — missing fields cause same Lovable auto-fix issue |
 | 5 | Beauty & Wellness | `Spies-ang/prana-template-suite` | pranaloveyoga.lovable.app | DECLINED | — |
 | 6 | Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | — | Roelf done, Riakona 80% | — |
 | — | Beauty & Wellness (v1) | `Spies-ang/beauty-bloom-template-54d0c7e3` | — | La Belle — hero broke, needs Lovable revert | — |
+
+**Future archetype — Interior Design:**
+Blue Sky Interior Design (Spies-ang/blue-sky-interior) can become the Interior Design archetype after a Lovable restyle (interior imagery replacing architectural exteriors, primary color #2D5B4E sage green). This avoids building a new template from scratch. Zero credit cost since the structure is identical to legacy-portfolio — just needs visual differentiation.
 
 ### Active recycling — IN PROGRESS
 - **Remix repo:** `Spies-ang/remix-of-bnb-archetype` (cloned from Garden Point template)
@@ -197,7 +200,7 @@ Sample size is too small to claim anything about which archetype converts best. 
 
 | Lead | Batch | Status | Notes |
 |---|---|---|---|
-| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k total: R2,500 deposit + R2,500 on completion, R700/month retainer). Awaiting callback time. |
+| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k total: R2,500 deposit + R2,500 on completion, R700/month retainer). She replied "will consider and come back." Keep following up. |
 | Lisa Rorich Architects | 2 | **INTERESTED** ✅ | Asked for fee structure. Pricing reply needed. |
 | Garden Point Guest House | 1 | **DECLINED** | Earlier batch. |
 | Dayyaans Driving School | 1 | **DECLINED** | No longer in business. |
@@ -219,6 +222,7 @@ Sample size is too small to claim anything about which archetype converts best. 
 - **Scraper exclude list doesn't scale.** Filtering out already-contacted leads via a hardcoded name list in the script is fragile. Filter by Status field in the Google Sheet instead — mark contacted leads as "Sent" or "Closed" and exclude non-"New" rows.
 - **Established firms with working sites don't need us.** Even if the scraper flags a URL as broken, a firm with 8 SA offices and a working primary domain is not a prospect. Scraper should weight review count + website quality together, not just URL status.
 - **Facebook activity check catches dead businesses.** Would have caught Prana Love closing and Dayyaans no longer operating before build time was spent.
+- **Practice page component is hardcoded, not dynamic.** Fixing siteConfig.team alone is NOT enough on legacy-portfolio sites. The Practice.tsx (or Team.tsx) component contains a hardcoded array with MEG team members (Tienie van der Merwe, Lizette van der Merwe, Associate Architect). Must grep for these names in src/ and replace the hardcoded array with siteConfig.team.map(). This affects ALL 5 current legacy-portfolio recycles (MW, Lisa Rorich, Rono, Ndibali, Blue Sky) and needs fixing upstream in the archetype. Claude Code prompt for this fix exists in chat history.
 
 ---
 
@@ -326,6 +330,7 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 - [ ] Pull next batch of 8-10 leads when batch 2 WhatsApps are out
 
 **Build fixes needed:**
+- [ ] Fix Practice page hardcoded team component on all 5 architect/interior sites (MW, Lisa Rorich, Rono, Ndibali, Blue Sky) — grep for "Tienie" or "van der Merwe" in src/, replace hardcoded array with siteConfig.team.map(). Then push same fix upstream to legacy-portfolio archetype.
 - [ ] Blue Sky Interior — Lovable restyle (interior design imagery, #2D5B4E sage primary)
 - [ ] CodeFlash Photography — swap placeholder images with photography studio imagery (Lovable prompt)
 - [ ] Meintjes Catering — structural fix (B&B → catering language in Home.tsx and Book.tsx, same pattern as Lat Wai venue conversion)
