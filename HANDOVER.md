@@ -1,7 +1,17 @@
 # SOLUSITE MEDIA — HANDOVER DOCUMENT
-**Last updated:** Monday 13 April 2026
+**Last updated:** Wednesday 16 April 2026
 **Bootstrap:** Paste this URL into any new Claude chat or Claude Code session:
 `https://raw.githubusercontent.com/Spies-ang/solusite-context/main/HANDOVER.md`
+
+---
+
+## CURRENT STATE (16 April 2026)
+
+**Batch 1 (6 sites):** Driving schools (Revo, TJs, Rightway, Skill on Wheels, Dayyaans) + Lat Wai Farm Venue. All built, WhatsApps sent. Mixed responses (see Client Responses below).
+
+**Batch 2 (7 sites) — COMPLETE:** MW Architects (Pretoria), Lisa Rorich Architects (Durban), Rono Architects (Joburg), Ndibali Interior Designs (Joburg), Blue Sky Interior Design (Joburg), CodeFlash Photography Studio (Pretoria), Meintjes Catering (Pretoria). All pushed and deployed on Lovable. WhatsApps NOT YET SENT.
+
+**Nexia SAB&T dropped** — verified as 8th largest accounting firm in SA with a working main site. Scraper picked up a broken branch/subdomain URL. False positive. Need 1 replacement lead before sending batch 2.
 
 ---
 
@@ -149,15 +159,15 @@ The scraper should filter on both gap tier AND industry category before a lead h
 
 ## ARCHETYPE TEMPLATES — CURRENT STATE
 
-| # | Archetype | Template Repo | Live URL | Status |
-|---|---|---|---|---|
-| 1 | Events & Creative | `Spies-ang/ross-images-studio` | — | Template-ready. Stefanie Ross declined (V1 lesson). |
-| 2 | Beauty & Wellness | `Spies-ang/prana-template-suite` | pranaloveyoga.lovable.app | **DECLINED** — closing the studio (Facebook update Ian saw later, scraper missed). |
-| 3 | Food & Hospitality | `Spies-ang/garden-gateways` | gardenpointguesthouse.lovable.app | **INTERESTED** ✅ — needs salesman closing call. |
-| 4 | Professional Services | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | **PENDING CALLBACK** — second attempt needed. |
-| 5 | Education & Training | `Spies-ang/pass-prep-pro` | studentechdrivertraining.lovable.app | **PENDING CALLBACK** — second attempt needed. |
-| 6 | Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | — | Roelf's done, Riakona 80% done (5 files remaining). |
-| — | Beauty & Wellness (v1) | `Spies-ang/beauty-bloom-template-54d0c7e3` | — | La Belle. Hero design upgrade BROKE site. Needs revert via Lovable version history. |
+| # | Archetype | Template Repo | Live URL | Status | Hardened? |
+|---|---|---|---|---|---|
+| 1 | Education & Training | `Spies-ang/pass-prep-pro` | studentechdrivertraining.lovable.app | Pending callback | ✅ Hardened — commit `077d8a8` |
+| 2 | Food, Hospitality & Events | `Spies-ang/garden-gateways` | gardenpointguesthouse.lovable.app | DECLINED | ⚠️ Partial — Location.tsx needs per-repo fix (hardcoded city strings) |
+| 3 | Professional Services / Portfolio | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | Pending callback | ❌ NOT hardened — missing fields trigger Lovable auto-fix loop (overwrites team arrays) |
+| 4 | Photography Studio | `Spies-ang/ross-images-studio` | — | Template-ready | ❌ NOT hardened — missing fields cause same Lovable auto-fix issue |
+| 5 | Beauty & Wellness | `Spies-ang/prana-template-suite` | pranaloveyoga.lovable.app | DECLINED | — |
+| 6 | Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | — | Roelf done, Riakona 80% | — |
+| — | Beauty & Wellness (v1) | `Spies-ang/beauty-bloom-template-54d0c7e3` | — | La Belle — hero broke, needs Lovable revert | — |
 
 ### Active recycling — IN PROGRESS
 - **Remix repo:** `Spies-ang/remix-of-bnb-archetype` (cloned from Garden Point template)
@@ -180,6 +190,37 @@ The scraper should filter on both gap tier AND industry category before a lead h
 - Always check the lead's recent Facebook activity before building (would have caught Prana Love closing)
 
 Sample size is too small to claim anything about which archetype converts best. Do not infer archetype performance from N=1.
+
+---
+
+## CLIENT RESPONSES
+
+| Lead | Batch | Status | Notes |
+|---|---|---|---|
+| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k + R700/month split). Waiting on callback time. |
+| Lisa Rorich Architects | 2 | **INTERESTED** ✅ | Asked for fee structure. Pricing reply needed. |
+| Garden Point Guest House | 1 | **DECLINED** | Earlier batch. |
+| Dayyaans Driving School | 1 | **DECLINED** | No longer in business. |
+| Prana Love Yoga | 1 | **DECLINED** | Closing studio. |
+| TJs Driving Academy | 1 | No response | Follow-up call needed. |
+| Rightway Driving Academy | 1 | No response | Follow-up call needed. |
+| Skill on Wheels Academy | 1 | No response | Follow-up call needed. |
+| Revo Driving School | 1 | No response | Follow-up call needed. |
+| MEG Architects | 1 | Pending callback | Second attempt needed. |
+| Studentech Driver Training | 1 | Pending callback | Second attempt needed. |
+| Batch 2 (all 7) | 2 | Not yet sent | WhatsApps pending. |
+
+---
+
+## KEY LEARNINGS
+
+- **Lovable auto-fix overwrites siteConfig team arrays.** When Lovable runs "Try to fix" on missing fields, it repopulates team arrays with the original template data (e.g. MEG team members appearing on Rono/Ndibali). Always restore via Claude Code after any Lovable "Try to fix" run. Check team, services, projects arrays specifically.
+- **Verify every domain before building.** Nexia SAB&T false positive — scraper flagged a broken branch URL but main site is live and professional. Manual spot-check required before committing build time.
+- **Scraper exclude list doesn't scale.** Filtering out already-contacted leads via a hardcoded name list in the script is fragile. Filter by Status field in the Google Sheet instead — mark contacted leads as "Sent" or "Closed" and exclude non-"New" rows.
+- **Established firms with working sites don't need us.** Even if the scraper flags a URL as broken, a firm with 8 SA offices and a working primary domain is not a prospect. Scraper should weight review count + website quality together, not just URL status.
+- **Facebook activity check catches dead businesses.** Would have caught Prana Love closing and Dayyaans no longer operating before build time was spent.
+
+---
 
 ---
 
@@ -276,15 +317,27 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 
 ## PENDING / ON THE HORIZON
 
-**Immediate (this weekend):**
-- [ ] Complete Villa 442 recycling (currently in recycling chat)
-- [ ] Generate Villa 442 WhatsApp + salesman briefing card (recycling chat job, must include both)
-- [ ] Call back MEG Architects + Studentech (salesman job, briefing cards already written)
-- [ ] Salesman closes Garden Point Guest House (briefing card already written)
-- [ ] Find and qualify next 3-5 leads for the salesman to keep momentum (filtered by industry budget rule above)
+**Immediate — sales:**
+- [ ] Send batch 2 WhatsApps (7 messages — MW, Lisa Rorich, Rono, Ndibali, Blue Sky, CodeFlash, Meintjes — phone numbers ready in sheet)
+- [ ] Reply to Lisa Rorich with pricing (she asked for fee structure)
+- [ ] Schedule Wendy (Lat Wai) callback
+- [ ] Follow-up calls for batch 1 non-responders: TJs, Rightway, Skill on Wheels, Revo
+
+**Immediate — pipeline:**
+- [ ] Pull 1 replacement lead to replace Nexia SAB&T (same industry filter: accounting / professional services)
+- [ ] Pull next batch of 8-10 leads when batch 2 WhatsApps are out
+
+**Build fixes needed:**
+- [ ] Blue Sky Interior — Lovable restyle (interior design imagery, sage green palette)
+- [ ] CodeFlash Photography — swap placeholder images with photography studio imagery (Lovable prompt)
+- [ ] Meintjes Catering — structural fix (B&B → catering language in Home.tsx and Book.tsx, same pattern as Lat Wai venue conversion)
+
+**Template hardening (do before next batch that uses these archetypes):**
+- [ ] Harden `legacy-portfolio` — add all missing siteConfig fields so Lovable auto-fix doesn't trigger and overwrite team/services/projects
+- [ ] Harden `ross-images-studio` — same issue, missing fields
 
 **Short-term:**
-- [ ] Run Stage 2 v2 Playwright overnight (Saturday or Sunday night)
+- [ ] Run Stage 2 v2 Playwright overnight
 - [ ] Set up Airtable base
 - [ ] Install n8n + n8n-MCP
 - [ ] Revert La Belle hero (beauty-bloom-template) via Lovable version history
@@ -293,12 +346,12 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 **Medium-term:**
 - [ ] Build first n8n workflow (manual trigger → Airtable → Claude subagent → site generation → Airtable update)
 - [ ] Stage 1c social media scraper for Silverbrook Media
-- [ ] Fix Stage 2 v1 scoring logic
-- [ ] Begin batch outbound on remaining 11,000+ leads
+- [ ] Fix Stage 2 v1 scoring logic (false positives on React/Next.js sites)
+- [ ] Switch scraper exclude logic from hardcoded name list → Status field filter in Google Sheet
 
 **Longer-term:**
 - [ ] Hire 2nd salesman if conversion rate validates at scale
-- [ ] Build templated archetype for: separate Restaurant (not B&B), Trades refresh, Health & Fitness
+- [ ] Build templated archetype for: Restaurant (standalone), Trades refresh, Health & Fitness
 - [ ] Productize the offering: standard package, standard upsells, standard onboarding
 
 ---
