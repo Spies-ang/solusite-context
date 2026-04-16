@@ -197,7 +197,7 @@ Sample size is too small to claim anything about which archetype converts best. 
 
 | Lead | Batch | Status | Notes |
 |---|---|---|---|
-| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k + R700/month split). Waiting on callback time. |
+| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k total: R2,500 deposit + R2,500 on completion, R700/month retainer). Awaiting callback time. |
 | Lisa Rorich Architects | 2 | **INTERESTED** ✅ | Asked for fee structure. Pricing reply needed. |
 | Garden Point Guest House | 1 | **DECLINED** | Earlier batch. |
 | Dayyaans Driving School | 1 | **DECLINED** | No longer in business. |
@@ -219,8 +219,6 @@ Sample size is too small to claim anything about which archetype converts best. 
 - **Scraper exclude list doesn't scale.** Filtering out already-contacted leads via a hardcoded name list in the script is fragile. Filter by Status field in the Google Sheet instead — mark contacted leads as "Sent" or "Closed" and exclude non-"New" rows.
 - **Established firms with working sites don't need us.** Even if the scraper flags a URL as broken, a firm with 8 SA offices and a working primary domain is not a prospect. Scraper should weight review count + website quality together, not just URL status.
 - **Facebook activity check catches dead businesses.** Would have caught Prana Love closing and Dayyaans no longer operating before build time was spent.
-
----
 
 ---
 
@@ -328,7 +326,7 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 - [ ] Pull next batch of 8-10 leads when batch 2 WhatsApps are out
 
 **Build fixes needed:**
-- [ ] Blue Sky Interior — Lovable restyle (interior design imagery, sage green palette)
+- [ ] Blue Sky Interior — Lovable restyle (interior design imagery, #2D5B4E sage primary)
 - [ ] CodeFlash Photography — swap placeholder images with photography studio imagery (Lovable prompt)
 - [ ] Meintjes Catering — structural fix (B&B → catering language in Home.tsx and Book.tsx, same pattern as Lat Wai venue conversion)
 
