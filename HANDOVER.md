@@ -419,6 +419,3 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 
 ---
 
-## SILVERBROOK MEDIA (FIANCÉE'S BUSINESS)
-
-Social media management. Higher-budget targets: hotels, event venues, tour operators, travel agencies, spas, restaurants, wedding photographers, real estate agents, interior designers, architects. Stage 1c scraper deferred until Solusite pitch validates through real calls.
