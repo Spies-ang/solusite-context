@@ -179,6 +179,66 @@ Blue Sky Interior Design (Spies-ang/blue-sky-interior) can become the Interior D
 
 ---
 
+## ARCHETYPE ARCHITECTURE — CLEAN REPO STRATEGY (decided 15 April 2026)
+
+### The problem
+Every remix inherits leftover client content from the source repo. The strip script catches siteConfig fields but misses hardcoded component strings (MEG team names, Cape Town directions, palette values). Each recycle wastes Claude Code time and Lovable credits fixing inherited mess.
+
+### The fix
+Create dedicated clean archetype repos that exist purely for remixing. Each archetype:
+- Has siteConfig.ts with obvious placeholder values ("[BUSINESS_NAME]", "[CITY]", "[PHONE]")
+- Has ZERO hardcoded client content in any component — everything reads from siteConfig
+- Has default Unsplash images matching the industry (not a specific client's photos)
+- Has a README.md explaining what fields need filling
+- Gets stripped and hardened ONCE, then never needs the strip script again
+
+The strip script becomes a one-time archetype creation tool, not a per-recycle step.
+
+### Recycle flow (new)
+Clean archetype repo → Lovable remix (free) → fill siteConfig via Claude Code → push → Lovable auto-deploys → cosmetic Lovable pass if needed
+
+### Archetype repos to create
+
+| # | Repo Name | Source | Industries | Key structure |
+|---|---|---|---|---|
+| 1 | archetype-professional-portfolio | legacy-portfolio (MEG) | Architects, interior designers, engineers, consultants | Practice/team, projects gallery, services, contact |
+| 2 | archetype-interior-design | blue-sky-interior (after restyle) | Interior designers, decorators, furniture designers | Same as above, interior imagery, warmer palette |
+| 3 | archetype-photography-studio | ross-images-studio | Photography studios, videographers | Gallery-heavy, packages, booking, photographer bio |
+| 4 | archetype-driving-school | pass-prep-pro | Driving schools, training providers | Already hardened. Packages, FAQ, test centre, K53 |
+| 5 | archetype-event-venue | garden-gateways (Lat Wai) | Event venues, function halls, wedding venues | Venue spaces, enquiry form, directions, amenities |
+| 6 | archetype-catering | meintjes-catering (after fix) | Caterers, event décor | Packages, event types, décor. Different from venue |
+| 7 | archetype-accounting | NEW BUILD | Accountants, auditors, tax advisors | Credentials, IRBA/SAICA, industries served, no portfolio |
+| 8 | archetype-restaurant | NEW BUILD | Restaurants, cafés | Menu, hours, reservations, gallery, location |
+
+### Creation process (per archetype)
+1. Clone source repo to new name (archetype-xxx)
+2. Run strip_siteconfig.py
+3. Fix any hardcoded component issues found in scan report
+4. Replace siteConfig values with obvious placeholders
+5. Add README.md with field documentation
+6. Commit and push as new repo under Spies-ang
+7. Create matching Lovable project linked to this repo
+8. All future remixes come from the Lovable project, never from a client repo
+
+### n8n automation flow (future)
+1. Trigger: new lead marked "Build" in Airtable
+2. n8n clones matching archetype repo to new client repo name
+3. Claude subagent researches lead online, generates siteConfig content
+4. n8n pushes filled siteConfig to the new repo
+5. Lovable auto-deploys within 60 seconds
+6. n8n updates Airtable with live demo URL
+7. Ian reviews, cosmetic Lovable pass if needed, sends WhatsApp
+
+### Priority order
+1. archetype-professional-portfolio (highest volume leads right now)
+2. archetype-catering (Meintjes fix creates this as byproduct)
+3. archetype-photography-studio (CodeFlash fix creates this)
+4. archetype-event-venue (Lat Wai already mostly clean)
+5. archetype-driving-school (already hardened, just rename + placeholder siteConfig)
+6-8. New builds when those industries come up
+
+---
+
 ## SALES RESULTS
 
 | Lead | Archetype | Gap | Result |
