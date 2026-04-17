@@ -128,6 +128,7 @@ This format is the standard. Every recycling chat output should include both doc
 - **Master:** `run_all_stages.py` runs all 3 stages
 - **Repo:** `github.com/Spies-ang/lead-scraper` (private)
 - **Output:** 11,120+ qualified leads across 67 industry tabs in Google Sheets `1yOjcFLNigV2Rg6PD5Ql5sDMQCOgY5_r0WPmZAJNLHeI`
+- **Direct Sheet Reader:** `fetch_new_leads.py` at `~/Documents/lead-scraper/` — reads the Google Sheet directly (not the CSV), respects the `Status` column, loops all industry tabs, filters Tier 1/2 gaps + rating ≥ 4.0 + reviews 5-30 + phone present, returns top 10 scored leads. Run with `python3 ~/Documents/lead-scraper/fetch_new_leads.py`.
 
 ### V2 Lead Priority (by website gap)
 **TIER 1 HOT:** FACEBOOK_ONLY, BROKEN_WEBSITE, REDIRECTS_TO_FACEBOOK, new businesses (5-20 reviews)
@@ -154,6 +155,7 @@ The scraper should filter on both gap tier AND industry category before a lead h
 ### Known Issues
 - Stage 2 v1 false positives — flags React/Next.js as BROKEN. Fix: Stage 2 v2 (Playwright). Deferred until calls validate.
 - Manual verification still required before building demos.
+- Stage 2 scoring fix NOT YET APPLIED to main script. The corrected no-website scoring logic (fewer reviews = higher priority score) was applied to `quick_export.py` and `fix_scores.py` but `scraper_stage2_website_checker.py` still has the old inverted logic. Apply before the next full scraper run.
 
 ---
 
