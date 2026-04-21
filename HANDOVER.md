@@ -1,5 +1,5 @@
 # SOLUSITE MEDIA — HANDOVER DOCUMENT
-**Last updated:** Wednesday 16 April 2026
+**Last updated:** Wednesday 22 April 2026
 **Bootstrap:** Paste this URL into any new Claude chat or Claude Code session:
 `https://raw.githubusercontent.com/Spies-ang/solusite-context/main/HANDOVER.md`
 
@@ -341,6 +341,7 @@ Active React/Supabase rebuild on Lovable.dev. Repo: `Spies-ang/handymandirectv2`
 - **Day job stack:** Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server
 - **Markets:** South Africa (Afrikaans + English)
 - **Google Cloud trial:** $8.59 spent, $291 remaining, expires 2026-05-19
+- **Solusite landing page assets (22 April 2026):** HTML source at /mnt/user-data/outputs/solusite-media.html (1031 lines). WhatsApp Business assets: whatsapp_profile.png (dark diamond on #0A0A0A with halo), whatsapp_profile_light.png (off-white alt), catalog_01_build.png through catalog_05_rebuild.png (5 catalog items matching landing page visual system). Business description, status line, catalog item copy all in chat transcript. Brand colour updated from #2B7BCC (legacy HandymanDirect invoice) to #3B82F6 for all new assets. Typography: Fraunces display + Instrument Serif italic + JetBrains Mono.
 
 ---
 
@@ -360,6 +361,8 @@ Active React/Supabase rebuild on Lovable.dev. Repo: `Spies-ang/handymandirectv2`
 12. **Browser chats can't read private repos** — temporarily make them public, or paste the file contents into the chat
 13. **Exposed token to rotate:** `https://github.com/settings/tokens` (look for `ghp_skzIqq0...`) — manual browser step
 14. **Lead-scraper remote URL already clean** (no PAT embedded)
+15. **Stage 2 scraper false-positive rate is ~27%** on modern JS-rendered sites. ALWAYS manually verify each lead via web search before writing siteConfig or briefing cards. Check: does the business have a working website at a URL the scraper missed? Is it a franchise/subsidiary of a larger brand? Is it a solo operator below review threshold? Is it a direct competitor (agency, graphic designer, photographer)?
+16. **Assistant verification mandate**: Any future chat producing lead qualification output MUST run web_search on each lead before passing judgement. Industry-category qualification from scraper metadata alone is insufficient — it missed KayShots/Royal Decor/Boulevard/Bigfoot in this batch. Verification checks: working website status, owner name, scale (solo/franchise/corporate), review accuracy, competitive overlap.
 
 ---
 
@@ -388,10 +391,28 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 - [ ] Follow-up calls for batch 1 non-responders: TJs, Rightway, Skill on Wheels, Revo
 
 **Immediate — pipeline:**
-- [ ] Pull 1 replacement lead to replace Nexia SAB&T (same industry filter: accounting / professional services)
-- [ ] Pull next batch of 8-10 leads when batch 2 WhatsApps are out
+**Current lead batch (22 April 2026) — VERIFICATION IN PROGRESS**
+Pulled 15 leads via fetch_new_leads.py. Ian selected 10 to build for (skipped #3 K2much, #14 Addon). Verification pass identified 3 scraper false positives (working sites misflagged as WEBSITE_UNREACHABLE):
+  - #8 KayShots VisualZ — has kayshots.co / kayshots.com live, also a competitor (photography/production). SKIP.
+  - #10 Royal Decor & Turfs — has royaldecorandturfs.co.za live, 5-star on Bark. SKIP.
+  - #11 Boulevard Storage — has boulevardstorage.co.za live, Faircape Group subsidiary. SKIP.
+  - #1 Bigfoot Car Detailing — has bigfootdetailing.co.za live, SA subsidiary of Rupes S.p.a. (Italian detailing brand founded 1968, SA branch founded 2016 by Vishal Nair). Franchise with multiple locations. SKIP.
+
+Confirmed false-positive rate ~27% in this batch — Stage 2 v1 requests-based scraper misreads modern JS-rendered sites. Stage 2 v2 Playwright rewrite is at ~/Documents/lead-scraper/scraper_stage2_website_checker_v2.py, NOT YET RUN. Should be run before the next batch pull.
+
+Still to verify in this batch (flagged for Ian to check before build):
+  - #2 Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT. Build with split-payment pitch, not full R5k upfront.
+  - #4 Skyscape Architects (Pretoria) — NOT VERIFIED YET
+  - #5 Sheikh Motors (Pretoria) — VERIFIED as thin footprint. Ian to call or drive past before build decision.
+  - #6 La-Mich Hair & Beauty Salon (Johannesburg) — NOT VERIFIED YET
+  - #7 Plain Blue Wedding Photo & Film (Cape Town) — NOT VERIFIED YET
+  - #9 OE Nails Beauty Salon (Pretoria) — NOT VERIFIED YET, Ian needs to scroll their Facebook to confirm proper salon vs. home operator
+  - #12 Nijhuis Attorneys (Johannesburg) — NOT VERIFIED YET
+  - #13 Sky Travel ZA (Johannesburg) — NOT VERIFIED YET
+  - #15 Silverline Accounting / Sal-Tax (Pretoria) — NOT VERIFIED YET, Ian needs to check main site isn't separate working URL (Nexia-style false positive risk)
 
 **Build fixes needed:**
+- [ ] Solusite landing page — Lovable deployment at solusite-media.lovable.app. Domain solusitemedia.co.za purchased on GoDaddy, propagating. Stage 3 enhancement prompts (cursor glow, headline shimmer, work hover iframe, live status ticker) sent to Lovable. Pending fix prompt: headline visibility bug + footer overlap + add business number +27 66 269 8553 + headline copy change to "Stop losing customers to a boring website" with "boring website" as blue italic accent + swap Ndibali for Blue Sky Interior Design in work list.
 - [ ] Fix Practice page hardcoded team component on all 5 architect/interior sites (MW, Lisa Rorich, Rono, Ndibali, Blue Sky) — grep for "Tienie" or "van der Merwe" in src/, replace hardcoded array with siteConfig.team.map(). Then push same fix upstream to legacy-portfolio archetype.
 - [ ] Blue Sky Interior — Lovable restyle (interior design imagery, #2D5B4E sage primary)
 - [ ] CodeFlash Photography — swap placeholder images with photography studio imagery (Lovable prompt)
@@ -402,6 +423,8 @@ Browser chats write prompts. Claude Code executes them. Don't paste browser-chat
 - [ ] Harden `ross-images-studio` — same issue, missing fields
 
 **Short-term:**
+- [ ] strip_archetype.py script written and saved to Ian's Downloads. Needs to be moved to ~/Documents/solusite-context/scripts/. Single-file Python 3.8+ stdlib-only. Sequential scan→report→pause→skeletonize flow. Outputs SCAN_REPORT.md and MANUAL_FIXES.md. Known patterns covered: SA phone regex, emails, local image imports, hardcoded arrays (MEG team bug), SA city names, siteConfig import checks. MANUAL_REVIEW_KEYS list flags team/services/projects/packages/testimonials/images/rooms/directions/trustBar/faqs/suburbs/emails for human review. Safety: refuses to run with uncommitted git changes unless --force, backs up siteConfig to .strip_backup/ before rewriting. Tested locally — NOT YET RUN on real repo.
+- [ ] First archetype creation batch queued — approach: duplicate good non-recycled repos on GitHub → rename to archetype-{type} → strip → commit. Unlimited count (no cap at 5-6). Priority order: professional-portfolio → catering → photography-studio → event-venue → driving-school → new builds.
 - [ ] Run Stage 2 v2 Playwright overnight
 - [ ] Set up Airtable base
 - [ ] Install n8n + n8n-MCP
