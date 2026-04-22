@@ -69,6 +69,23 @@ Ian pastes this block into Claude Code. Claude Code applies the changes to the r
 - Explanations that duplicate CONTEXT.md
 - Code snippets (those live in `scripts/`)
 
+### Conflict resolution: live decisions override stale STATE
+
+If Ian makes a decision in chat that contradicts what STATE.md currently says, Ian's live decision wins. STATE is a snapshot — it goes stale between sessions. A chat that follows STATE in the face of a live override re-introduces the drift the 4-file system was built to prevent.
+
+When this happens, the chat must:
+1. Proceed on Ian's decision, not STATE
+2. Flag the contradiction briefly in response: "Note: STATE says X, you've just said Y — proceeding on your live decision"
+3. Include the STATE.md correction in the end-of-session update block
+
+This applies to any override, including:
+- A lead STATE lists as SKIP / false positive that Ian has decided to build
+- A client status STATE lists as "awaiting" that Ian has updated
+- A task STATE lists as pending that Ian confirms is done
+- Any other contradiction between STATE and a live user decision
+
+The rule also applies in reverse: if Ian confirms something STATE marks as complete is actually still open, the chat treats it as open and flags the STATE staleness.
+
 ---
 
 ## SECTION 2 — LEAD QUALIFICATION RULES
