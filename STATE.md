@@ -81,8 +81,17 @@
 | 6 | Trades | `roelfsautoelectrical` + `riakonaelectrical` | — | — | Roelf done, Riakona 80% |
 | — | Beauty v1 | `beauty-bloom-template-54d0c7e3` | — | — | La Belle hero broken, needs Lovable revert |
 
-### Clean-archetype repos (none built yet)
-Target order: professional-portfolio → catering → photography-studio → event-venue → driving-school → interior-design → accounting → restaurant.
+### Clean archetype repos (created 2026-04-23)
+
+| Archetype repo | Source | Status | Manual fixes remaining |
+|---|---|---|---|
+| `archetype-professional-services` | legacy-portfolio | Stripped ⚠️ | 8 local image imports; services/testimonials/emails arrays; verify Practice.tsx team array |
+| `archetype-beauty-wellness` | prana-template-suite | Stripped ⚠️ | 6 local image imports; testimonials array |
+| `archetype-hospitality` | garden-gateways | Stripped ⚠️ | 12 local image imports; testimonials/rooms arrays |
+| `archetype-education-training` | pass-prep-pro | Stripped ⚠️ | 2 local image imports; packages/testimonials/faqs arrays. Note: .env removed, consider rotating Supabase anon key |
+| `archetype-photography` | ross-images-studio | **Clean** ✅ | services/packages/testimonials arrays only — no local images |
+
+All repos: MANUAL_FIXES.md and SCAN_REPORT.md committed. Next step per archetype: replace local image imports with Unsplash URLs in siteConfig.images, clear complex arrays to placeholder entries, link Lovable project.
 
 ---
 

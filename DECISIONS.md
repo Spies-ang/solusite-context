@@ -95,6 +95,14 @@
 
 **2026-04-23** — RULES.md §1 conflict resolution rule added: live Ian decision overrides stale STATE. Triggered by Royal Decor drift where Sonnet defaulted to STATE "false positive" despite Ian's live override. [Opus strategy chat]
 
+**2026-04-23** — Clean archetype repo batch created: archetype-professional-services (from legacy-portfolio), archetype-beauty-wellness (from prana-template-suite), archetype-hospitality (from garden-gateways), archetype-education-training (from pass-prep-pro), archetype-photography (from ross-images-studio). All stripped via strip_archetype.py. MANUAL_FIXES.md committed to each. [Claude Code terminal]
+
+**2026-04-23** — archetype-trades deliberately skipped: Trades repos (roelfsautoelectrical, riakonaelectrical) use V1 patterns without siteConfig.ts and cannot be stripped. New Trades client will produce a modern siteConfig-based build that becomes the archetype source. [Claude Code terminal]
+
+**2026-04-23** — LEARNING: pass-prep-pro had a .env file with Supabase anon key committed to source. Caught during archetype creation, removed immediately. .env added to .gitignore in archetype-education-training. Source repo (pass-prep-pro) still has it in history — consider rotating the Supabase anon key for project staahhylguvgrlfvawao. [Claude Code terminal]
+
+**2026-04-23** — LEARNING: archetype-photography is the cleanest source in the batch (0 critical findings) — already used Unsplash URLs, no local asset imports. ross-images-studio should be the benchmark pattern for future client builds. [Claude Code terminal]
+
 ---
 
 *Append new decisions here. Never edit existing entries.*
