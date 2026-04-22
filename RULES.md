@@ -95,6 +95,8 @@ Ian pastes this block into Claude Code. Claude Code applies the changes to the r
 
 2.8. **Established no-website businesses (50+ reviews, no gap) do not convert.** Thriving businesses without websites don't feel the need. This is validated from V1 and is settled logic — do not re-propose targeting them.
 
+2.9. **A "working website" means the client wouldn't need a new one.** A site that is under construction, showing a "we are redesigning" notice, a dead Yolasite or Squarespace starter URL, a directory-only listing, a visually broken/outdated site, or any other state where Ian would still pitch them a new one — is a GAP, not a working site. When in doubt, imagine showing the existing site to the client: if they'd agree it's inadequate, it's a gap. The §2.3 verification check is asking "does a usable site exist that makes this lead pointless?" — not "does any domain resolve?"
+
 ---
 
 ## SECTION 3 — CLIENT COMMUNICATIONS
