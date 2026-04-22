@@ -1,23 +1,33 @@
 # SOLUSITE MEDIA — HANDOVER DOCUMENT
-**Last updated:** Wednesday 22 April 2026
+**Last updated:** Wednesday 22 April 2026 (evening)
 **Bootstrap:** Paste this URL into any new Claude chat or Claude Code session:
 `https://raw.githubusercontent.com/Spies-ang/solusite-context/main/HANDOVER.md`
 
+> **NOTE:** This document is being replaced by a 4-file system (`RULES.md`, `STATE.md`, `DECISIONS.md`, `CONTEXT.md`) that are being built in the same session as this handover fix. Once those are live, this single HANDOVER.md is archived and new chats bootstrap from RULES.md + STATE.md only. This version exists to be the final corrected single-file handover for continuity.
+
 ---
 
-## CURRENT STATE (16 April 2026)
+## CURRENT STATE (22 April 2026, evening)
 
-**Batch 1 (6 sites):** Driving schools (Revo, TJs, Rightway, Skill on Wheels, Dayyaans) + Lat Wai Farm Venue. All built, WhatsApps sent. Mixed responses (see Client Responses below).
+**Batch 1 (6 sites):** Driving schools (Revo, TJs, Rightway, Skill on Wheels, Dayyaans) + Lat Wai Farm Venue. All built. First-round WhatsApps sent from personal number. Second-round follow-ups sent from new business number (+27 66 269 8553) in a 13-message batch covering both Batch 1 non-responders and Batch 2.
 
-**Batch 2 (7 sites) — COMPLETE:** MW Architects (Pretoria), Lisa Rorich Architects (Durban), Rono Architects (Joburg), Ndibali Interior Designs (Joburg), Blue Sky Interior Design (Joburg), CodeFlash Photography Studio (Pretoria), Meintjes Catering (Pretoria). All pushed and deployed on Lovable. WhatsApps NOT YET SENT.
+**Batch 2 (7 sites):** MW Architects, Lisa Rorich Architects, Rono Architects, Ndibali Interior Designs, Blue Sky Interior Design, CodeFlash Photography Studio, Meintjes Catering. All built, deployed on Lovable, first-round WhatsApps sent from personal number. Second-round follow-ups included in the 13-message batch above.
 
-**Nexia SAB&T dropped** — verified as 8th largest accounting firm in SA with a working main site. Scraper picked up a broken branch/subdomain URL. False positive. Need 1 replacement lead before sending batch 2.
+**Solusite landing page:** Live at solusite-media.lovable.app. Domain solusitemedia.co.za purchased on GoDaddy, propagating. Hero headline / footer / business number / work examples fix prompt sent to Lovable.
+
+**WhatsApp Business profile:** Active on new business number +27 66 269 8553. Dark diamond logo on #0A0A0A, off-white alt, 5 catalog items matching the landing page visual system.
+
+**Practice page hardcoded-team bug:** RESOLVED on all 5 architect/interior sites (MW, Lisa Rorich, Rono, Ndibali, Blue Sky). Verified live. Fix still needs to be pushed upstream to `legacy-portfolio` archetype so future recycles inherit it.
+
+**Current lead batch (22 April):** 15 pulled via `fetch_new_leads.py`. Ian selected 10 to build for. Verification pass identified several scraper false positives (KayShots, Royal Decor, Boulevard Storage, Bigfoot — all have working sites). Remaining leads need proper re-verification using the correct criteria — NOT geography-based.
 
 ---
 
 ## WHO
 
-Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital marketing) alongside a day job as Data Engineer at Belgotex (Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server). Also runs Spies Construction and DFFRNT (athletic wear). Fiancée runs **Silverbrook Media** (social media management, shares pipeline infrastructure). Collaborator: **Markus** (lead handling). **NEW: hired a young salesman** to handle closing calls after Ian's warm WhatsApp intro — Ian builds and warms, salesman closes.
+Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital marketing) alongside a day job as Data Engineer at Belgotex (Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server). Also runs Spies Construction and DFFRNT (athletic wear). Fiancée runs **Silverbrook Media** (social media management, shares pipeline infrastructure). Collaborator: **Markus** (lead handling). **Hired a junior salesman** to handle closing calls after Ian's warm WhatsApp intro — Ian builds and warms, salesman closes.
+
+**Business number:** +27 66 269 8553 (new, as of 21 April 2026). Personal number retired from business use.
 
 **Communication style:** Direct, concise, no preamble. Voice-to-text input. Only change what was asked. Never assume — ask. One consolidated answer beats three partial ones.
 
@@ -27,23 +37,21 @@ Ian Spies, Pretoria, South Africa. Runs **Solusite Media** (web dev + digital ma
 
 ## BUSINESS MODEL — TWO-STAGE SALES HANDOFF
 
-The flow as of 13 April 2026:
-
 1. **Scrape & qualify** — Multi-stage Python scraper finds leads with website gaps
 2. **Build** — Recycle the matching archetype template, customize siteConfig.ts for the lead, push to GitHub, Lovable auto-deploys
-3. **Ian sends warm intro WhatsApp** — Personal hook + gap framing + live demo URL + "important to know" placeholder disclaimer + commits to a callback window. Stays in Ian's name to preserve the trust anchor ("a real person noticed me")
-4. **Ian sends salesman briefing card** — Structured summary of the lead so the salesman can dial cold-but-prepared
-5. **Salesman calls** — **Suggested opening template** (not law, adapt to the lead): "Hi, this is [name] from Solusite Media — Ian asked me to follow up on the website he sent you yesterday." This phrasing keeps Ian as the trust anchor and positions the salesman as a colleague.
+3. **Ian sends warm intro WhatsApp** — Personal hook + gap framing + live demo URL + placeholder disclaimer + callback window. Stays in Ian's name to preserve the trust anchor.
+4. **Ian sends salesman briefing card** — Structured summary so the salesman can dial cold-but-prepared
+5. **Salesman calls** — Suggested opening: *"Hi, this is [name] from Solusite Media — Ian asked me to follow up on the website he sent you yesterday."*
 6. **Salesman closes the meeting**, not the deal — goal is a 30-45 min meeting where the client hands over real photos and details
 7. **Convert** to paying client + monthly retainer
 
 ### Pricing
 
-**All archetypes anchor at R5,000 once-off.** Frame it as: *"Our builds usually go for R8,500 — you're getting the introductory rate of R5,000."* Retainer varies per archetype (see table).
+**All archetypes anchor at R5,000 once-off.** Frame: *"Our builds usually go for R8,500 — you're getting the introductory rate of R5,000."*
 
 **Fallback payment plan** (offer only if price is the blocker): R2,500 upfront + R2,500 on completion within 1 week.
 
-Blog add-on: R500/month for 2 SEO posts per site. Payment plan handled in negotiation. Never lead with price.
+Blog add-on: R500/month for 2 SEO posts per site.
 
 | Archetype | Build | Retainer |
 |---|---|---|
@@ -58,290 +66,165 @@ Blog add-on: R500/month for 2 SEO posts per site. Payment plan handled in negoti
 
 ---
 
-## SALES HANDOFF — REQUIRED OUTPUTS PER LEAD
+## LEAD GENERATION — CORRECT QUALIFYING CRITERIA
 
-For every lead that gets a built demo site, generate TWO documents:
+**The V2 criteria are non-negotiable and have been the foundation of the project since March 2026.** Every chat re-briefing them is a sign of drift.
 
-### 1. WhatsApp message (for Ian to send to the client)
-- Personal hook in first sentence (specific detail you noticed about THEIR business)
-- Gap framing ("I noticed you're running off Facebook" / "I noticed your domain shows Coming Soon")
-- Live demo URL
-- "Important to know" placeholder paragraph — explicitly flags photos, prices, hours as placeholders
-- Specific callback window: "Someone from our team will give you a call tomorrow between 10am and 12pm" (NOT "I'll call" — handoff is now to salesman)
-- Low-pressure close
+### Criteria (ALL must be true)
+1. Website gap is Tier 1 or Tier 2
+2. Rating ≥ 4.0
+3. Reviews between 5 and 30 (sweet spot — not new-new, not established)
+4. Phone present
+5. Industry is in the prioritized list (not deprioritized)
+6. Web-search verification passed:
+   - No working website found under an alternative URL (false positive check)
+   - Not a franchise/subsidiary of a corporate brand
+   - Not a direct competitor (agency, web dev, graphic designer, photographer using web presence)
+   - Real standalone business with a findable owner
 
-**Rule: never mention being Pretoria-based in client comms.** No "we're a Pretoria agency," no "local to you in Pretoria," no geographic framing at all. Solusite pitches as a capability, not a locality. Applies to WhatsApp messages, salesman scripts, demo site copy — everything client-facing.
+### What is NOT a criterion
+- **Geography.** Leads come from all four SA cities (Cape Town, Joburg, Durban, Pretoria). Being in or out of Pretoria has no bearing on qualification.
+- **The "don't mention Pretoria" rule applies only to client-facing copy**, not lead filtering.
 
-Stays in Ian's name. The "we" reframing happens naturally on the salesman's call, not in the WhatsApp.
+### Tier system (by website gap)
+- **TIER 1 HOT:** FACEBOOK_ONLY, BROKEN_WEBSITE, WEBSITE_UNREACHABLE, REDIRECTS_TO_FACEBOOK
+- **TIER 2 WARM:** OLD_OR_BAD_WEBSITE, non-mobile-responsive, no SSL, placeholders
+- **TIER 3 COLD:** Established no-website (50+ reviews) — V1 confirmed hardest sell, deprioritized
 
-### 2. Salesman briefing card (for Ian to send to the salesman)
-Structured format, scannable in 30 seconds before dialing. Required sections:
+### Industry budget filter
 
-```
-LEAD: [Business Name]
-STATUS: [Interested / Pending callback / Cold]
+Website-gap tier alone is not enough. Industry determines budget capacity.
 
-CONTACT
-Phone, WhatsApp, Email, Address, Live demo URL
+**DEPRIORITIZE (high need, lower budget, close rate unproven):**
+Wellness studios, personal trainers, physiotherapists, yoga studios, small independent spas.
 
-ABOUT THEM
-3-5 bullet points on what the business does, scale, reputation
+**PRIORITIZE (clear revenue per customer, defensible ROI pitch):**
+- Hospitality with commission pain: hotels, B&Bs, guesthouses, lodges — Booking.com/Airbnb math pitch
+- Professional services with project fees: architects, lawyers, accountants, consulting firms, agencies
+- Education with course fees: driving schools, music schools, tutoring businesses, training providers
+- Event-driven with per-booking revenue: wedding photographers, event venues, catering, tour operators
+- Restaurants (established, not street-food tier)
 
-THE PAIN POINT (LEAD WITH THIS)
-The specific gap and why it costs them money/credibility/clients.
-Include math angle if possible (e.g. commission costs, lost SEO traffic).
-
-COMPETITIVE ADVANTAGES TO MENTION
-4-5 bullet points on why Solusite specifically (demo-first, archetype-tuned, etc.)
-DO NOT mention Pretoria / geography.
-
-WHAT THEY ALREADY KNOW (from Ian's WhatsApp)
-What's been disclosed so the salesman doesn't repeat or contradict
-
-PRICING (KEEP IN HEAD, DON'T LEAD WITH IT)
-Anchor: R8,500. Actual: R5,000 introductory. Retainer per archetype.
-Fallback split: R2,500 upfront + R2,500 on completion within 1 week.
-
-THE CLOSE
-What the goal of this specific call is. Usually a meeting, not a deal.
-Suggested closing phrase.
-
-OBJECTIONS TO PREP FOR
-3-4 likely objections + responses
-
-NAME TO USE / WHO TO ASK FOR
-If known
-```
-
-This format is the standard. Every recycling chat output should include both documents.
+### Facebook activity check (pre-build hard gate)
+Before building any demo site: check the lead's Facebook. If last post > 60 days ago or announcing closure, skip. This rule originated from Prana Love (closing studio) and Dayyaans (defunct) — both burned build time that was preventable.
 
 ---
 
-## LEAD GENERATION — V2 MULTI-STAGE SCRAPER
+## LEAD GENERATION PIPELINE — V2 MULTI-STAGE SCRAPER
 
 ### Architecture
 - **Stage 1:** `scraper_stage1_broad_capture.py` — Google Places API → `raw_leads.csv`
-- **Stage 1b:** Place Details enrichment → `enriched_leads.csv`
+- **Stage 1b:** `scraper_stage1b_enrich.py` — Place Details per lead for website + phone → `enriched_leads.csv`
 - **Stage 2:** `scraper_stage2_website_checker.py` — visits each website → `qualified_leads.csv`
 - **Stage 2 v2:** `scraper_stage2_website_checker_v2.py` — Playwright-based, fixes false positives. **NOT YET RUN.** Located at `~/Documents/lead-scraper/`. Run overnight, ~6-8 hours.
 - **Stage 3:** `scraper_stage3_sheets_export.py` — exports to Google Sheets
-- **Master:** `run_all_stages.py` runs all 3 stages
+- **Master:** `run_all_stages.py` runs all stages
 - **Repo:** `github.com/Spies-ang/lead-scraper` (private)
 - **Output:** 11,120+ qualified leads across 67 industry tabs in Google Sheets `1yOjcFLNigV2Rg6PD5Ql5sDMQCOgY5_r0WPmZAJNLHeI`
-- **Direct Sheet Reader:** `fetch_new_leads.py` at `~/Documents/lead-scraper/` — reads the Google Sheet directly (not the CSV), respects the `Status` column, loops all industry tabs, filters Tier 1/2 gaps + rating ≥ 4.0 + reviews 5-30 + phone present, returns top 10 scored leads. Run with `python3 ~/Documents/lead-scraper/fetch_new_leads.py`.
+- **Direct Sheet Reader:** `fetch_new_leads.py` at `~/Documents/lead-scraper/` — reads the Sheet directly, respects Status column, loops all tabs, applies criteria filter, returns top scored leads.
 
-### V2 Lead Priority (by website gap)
-**TIER 1 HOT:** FACEBOOK_ONLY, BROKEN_WEBSITE, REDIRECTS_TO_FACEBOOK, new businesses (5-20 reviews)
-**TIER 2 WARM:** OLD_OR_BAD_WEBSITE, non-mobile-responsive, no SSL, placeholders
-**TIER 3 COLD:** Established no-website (50+ reviews) — V1 confirmed hardest sell
+### Known issues
 
-### Industry Budget Filter (CRITICAL — apply before pulling leads)
+**Stage 2 scoring fix NOT YET APPLIED to main script.** The corrected no-website scoring logic (fewer reviews = higher priority score) lives in `quick_export.py` and `fix_scores.py` but `scraper_stage2_website_checker.py` still has the old inverted logic. Apply before the next full scraper run. Open since end of March 2026.
 
-Website-gap tier alone is not enough. Industry determines whether the lead can actually pay. Close rate is **uncertain** across archetypes — conversion data is still thin — so prioritize industries with clear, per-customer revenue over industries with high need but thin margins.
+**Stage 2 v1 false-positive rate ~27%** on modern JS-rendered sites (requests library can't execute JS). Stage 2 v2 Playwright rewrite exists but hasn't been run. Until it is, every batch requires manual web-search verification per lead.
 
-**DEPRIORITIZE (high need, lower budget, close rate unproven):**
-- Wellness studios, personal trainers, physiotherapists, yoga studios, small independent spas
-- These businesses often *need* a site more than anyone, but the monthly cash flow rarely supports a R5,000 build + R700 retainer without negotiation friction
-
-**PRIORITIZE (clear revenue per customer, defensible ROI pitch):**
-- **Hospitality with commission pain:** hotels, B&Bs, guesthouses, lodges — Booking.com/Airbnb commissions are a math-based pitch
-- **Professional services with project fees:** architects, lawyers, accountants, consulting firms, agencies
-- **Education with course fees:** driving schools, music schools, tutoring businesses, training providers
-- **Event-driven with per-booking revenue:** wedding photographers, event venues, catering, tour operators
-- **Restaurants** (established, not street-food tier)
-
-The scraper should filter on both gap tier AND industry category before a lead hits Ian's desk.
-
-### Known Issues
-- Stage 2 v1 false positives — flags React/Next.js as BROKEN. Fix: Stage 2 v2 (Playwright). Deferred until calls validate.
-- Manual verification still required before building demos.
-- Stage 2 scoring fix NOT YET APPLIED to main script. The corrected no-website scoring logic (fewer reviews = higher priority score) was applied to `quick_export.py` and `fix_scores.py` but `scraper_stage2_website_checker.py` still has the old inverted logic. Apply before the next full scraper run.
+**Stage 2 saves only at completion.** No batch save / resume. A crash at hour 5 of a 7-hour run loses everything.
 
 ---
 
 ## ARCHETYPE TEMPLATES — CURRENT STATE
 
-| # | Archetype | Template Repo | Live URL | Status | Hardened? |
-|---|---|---|---|---|---|
-| 1 | Education & Training | `Spies-ang/pass-prep-pro` | studentechdrivertraining.lovable.app | Pending callback | ✅ Hardened — commit `077d8a8` |
-| 2 | Food, Hospitality & Events | `Spies-ang/garden-gateways` | gardenpointguesthouse.lovable.app | DECLINED | ⚠️ Partial — Location.tsx needs per-repo fix (hardcoded city strings) |
-| 3 | Professional Services / Portfolio | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | Pending callback | ❌ NOT hardened — missing fields trigger Lovable auto-fix loop (overwrites team arrays). ALSO: Practice page component has hardcoded MEG team names that ignore siteConfig.team entirely. |
-| 4 | Photography Studio | `Spies-ang/ross-images-studio` | — | Template-ready | ❌ NOT hardened — missing fields cause same Lovable auto-fix issue |
-| 5 | Beauty & Wellness | `Spies-ang/prana-template-suite` | pranaloveyoga.lovable.app | DECLINED | — |
-| 6 | Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | — | Roelf done, Riakona 80% | — |
-| — | Beauty & Wellness (v1) | `Spies-ang/beauty-bloom-template-54d0c7e3` | — | La Belle — hero broke, needs Lovable revert | — |
-
-**Future archetype — Interior Design:**
-Blue Sky Interior Design (Spies-ang/blue-sky-interior) can become the Interior Design archetype after a Lovable restyle (interior imagery replacing architectural exteriors, primary color #2D5B4E sage green). This avoids building a new template from scratch. Zero credit cost since the structure is identical to legacy-portfolio — just needs visual differentiation.
-
-### Active recycling — IN PROGRESS
-- **Remix repo:** `Spies-ang/remix-of-bnb-archetype` (cloned from Garden Point template)
-- **Target lead:** **The Villa 442**, 442 Salie St, Chantelle, Akasia, Pretoria 0182. Phone 064 546 8891. 4.9 stars, 11 reviews. BROKEN_WEBSITE — their "website" is literally a Booking.com share link (https://www.booking.com/Share-9NNlQY). Same commission-dependency pitch as Garden Point.
-- **Status:** Recycling chat is currently working on this. Both repos need to be temporarily public for the chat to access them.
-
----
-
-## ARCHETYPE ARCHITECTURE — CLEAN REPO STRATEGY (decided 15 April 2026)
-
-### The problem
-Every remix inherits leftover client content from the source repo. The strip script catches siteConfig fields but misses hardcoded component strings (MEG team names, Cape Town directions, palette values). Each recycle wastes Claude Code time and Lovable credits fixing inherited mess.
-
-### The fix
-Create dedicated clean archetype repos that exist purely for remixing. Each archetype:
-- Has siteConfig.ts with obvious placeholder values ("[BUSINESS_NAME]", "[CITY]", "[PHONE]")
-- Has ZERO hardcoded client content in any component — everything reads from siteConfig
-- Has default Unsplash images matching the industry (not a specific client's photos)
-- Has a README.md explaining what fields need filling
-- Gets stripped and hardened ONCE, then never needs the strip script again
-
-The strip script becomes a one-time archetype creation tool, not a per-recycle step.
-
-### Recycle flow (new)
-Clean archetype repo → Lovable remix (free) → fill siteConfig via Claude Code → push → Lovable auto-deploys → cosmetic Lovable pass if needed
-
-### Archetype repos to create
-
-| # | Repo Name | Source | Industries | Key structure |
+| # | Archetype | Template Repo | Live URL | Hardened? |
 |---|---|---|---|---|
-| 1 | archetype-professional-portfolio | legacy-portfolio (MEG) | Architects, interior designers, engineers, consultants | Practice/team, projects gallery, services, contact |
-| 2 | archetype-interior-design | blue-sky-interior (after restyle) | Interior designers, decorators, furniture designers | Same as above, interior imagery, warmer palette |
-| 3 | archetype-photography-studio | ross-images-studio | Photography studios, videographers | Gallery-heavy, packages, booking, photographer bio |
-| 4 | archetype-driving-school | pass-prep-pro | Driving schools, training providers | Already hardened. Packages, FAQ, test centre, K53 |
-| 5 | archetype-event-venue | garden-gateways (Lat Wai) | Event venues, function halls, wedding venues | Venue spaces, enquiry form, directions, amenities |
-| 6 | archetype-catering | meintjes-catering (after fix) | Caterers, event décor | Packages, event types, décor. Different from venue |
-| 7 | archetype-accounting | NEW BUILD | Accountants, auditors, tax advisors | Credentials, IRBA/SAICA, industries served, no portfolio |
-| 8 | archetype-restaurant | NEW BUILD | Restaurants, cafés | Menu, hours, reservations, gallery, location |
+| 1 | Education & Training | `Spies-ang/pass-prep-pro` | studentechdrivertraining.lovable.app | ✅ Hardened — commit `077d8a8` |
+| 2 | Food, Hospitality & Events | `Spies-ang/garden-gateways` | gardenpointguesthouse.lovable.app | ⚠️ Partial — Location.tsx needs per-repo fix |
+| 3 | Professional Services / Portfolio | `Spies-ang/legacy-portfolio` | megarchitects.lovable.app | ⚠️ Practice-page hardcoded-team fix applied to child sites but NOT yet upstreamed |
+| 4 | Photography Studio | `Spies-ang/ross-images-studio` | — | ❌ Not hardened |
+| 5 | Beauty & Wellness | `Spies-ang/prana-template-suite` | pranaloveyoga.lovable.app | — |
+| 6 | Trades & Home Services | `roelfsautoelectrical` + `riakonaelectrical` | — | Roelf done, Riakona 80% |
+| — | Beauty & Wellness (v1) | `Spies-ang/beauty-bloom-template-54d0c7e3` | — | La Belle — hero broke, needs Lovable revert |
 
-### Creation process (per archetype)
-1. Clone source repo to new name (archetype-xxx)
-2. Run strip_siteconfig.py
-3. Fix any hardcoded component issues found in scan report
-4. Replace siteConfig values with obvious placeholders
-5. Add README.md with field documentation
-6. Commit and push as new repo under Spies-ang
-7. Create matching Lovable project linked to this repo
-8. All future remixes come from the Lovable project, never from a client repo
+### Clean-archetype repo strategy (decided 15 April 2026)
 
-### n8n automation flow (future)
-1. Trigger: new lead marked "Build" in Airtable
-2. n8n clones matching archetype repo to new client repo name
-3. Claude subagent researches lead online, generates siteConfig content
-4. n8n pushes filled siteConfig to the new repo
-5. Lovable auto-deploys within 60 seconds
-6. n8n updates Airtable with live demo URL
-7. Ian reviews, cosmetic Lovable pass if needed, sends WhatsApp
+Stop remixing client repos. Build dedicated `archetype-*` repos with placeholder values. Strip once, never strip again.
 
-### Priority order
-1. archetype-professional-portfolio (highest volume leads right now)
-2. archetype-catering (Meintjes fix creates this as byproduct)
-3. archetype-photography-studio (CodeFlash fix creates this)
-4. archetype-event-venue (Lat Wai already mostly clean)
-5. archetype-driving-school (already hardened, just rename + placeholder siteConfig)
-6-8. New builds when those industries come up
+**Priority order for archetype creation:**
+1. `archetype-professional-portfolio` (from legacy-portfolio after upstream fix)
+2. `archetype-catering` (from Meintjes after B&B→catering structural fix)
+3. `archetype-photography-studio` (from ross-images-studio)
+4. `archetype-event-venue` (from garden-gateways / Lat Wai)
+5. `archetype-driving-school` (from pass-prep-pro — already hardened, just needs rename + placeholder siteConfig)
+6-8. New builds: `archetype-interior-design`, `archetype-accounting`, `archetype-restaurant`
+
+`strip_archetype.py` written, saved to Downloads, **needs to be moved to `~/Documents/solusite-context/scripts/`** and run on first archetype.
 
 ---
 
-## SALES RESULTS
+## CLIENT RESPONSES — STATE AS OF 22 APRIL 2026 EVENING
 
-| Lead | Archetype | Gap | Result |
-|---|---|---|---|
-| Garden Point Guest House | Hospitality | WEBSITE_UNREACHABLE | **INTERESTED** ✅ |
-| Prana Love Yoga | Beauty & Wellness | FACEBOOK_ONLY | DECLINED (closing studio) |
-| MEG Architects | Professional Services | BROKEN_WEBSITE (Coming Soon) | Pending callback |
-| Studentech Driver Training | Education & Training | FACEBOOK_ONLY | Pending callback |
-| Stefanie Ross Photography (V1) | Events & Creative | FACEBOOK_ONLY | DECLINED (fully booked) |
-
-**Validated learnings:**
-- Always check the lead's recent Facebook activity before building (would have caught Prana Love closing)
-
-Sample size is too small to claim anything about which archetype converts best. Do not infer archetype performance from N=1.
-
----
-
-## CLIENT RESPONSES
-
-| Lead | Batch | Status | Notes |
-|---|---|---|---|
-| Lat Wai (Wendy) | 1 | **INTERESTED** ✅ | Pricing sent (R5k total: R2,500 deposit + R2,500 on completion, R700/month retainer). She replied "will consider and come back." Keep following up. |
-| Lisa Rorich Architects | 2 | **INTERESTED** ✅ | Asked for fee structure. Pricing reply needed. |
-| Garden Point Guest House | 1 | **DECLINED** | Earlier batch. |
-| Dayyaans Driving School | 1 | **DECLINED** | No longer in business. |
-| Prana Love Yoga | 1 | **DECLINED** | Closing studio. |
-| TJs Driving Academy | 1 | No response | Follow-up call needed. |
-| Rightway Driving Academy | 1 | No response | Follow-up call needed. |
-| Skill on Wheels Academy | 1 | No response | Follow-up call needed. |
-| Revo Driving School | 1 | No response | Follow-up call needed. |
-| MEG Architects | 1 | Pending callback | Second attempt needed. |
-| Studentech Driver Training | 1 | Pending callback | Second attempt needed. |
-| Batch 2 (all 7) | 2 | Not yet sent | WhatsApps pending. |
+| Lead | Status | Notes / Next Action |
+|---|---|---|
+| Lat Wai (Wendy) | INTERESTED ✅ | Pricing sent (R5k total: R2,500 deposit + R2,500 on completion, R700/month retainer). Replied "will consider." Follow-up needed. |
+| Lisa Rorich Architects | INTERESTED ✅ | Fee structure sent via personal phone after she asked. Business-number follow-up also sent. Awaiting reply. |
+| MEG Architects (Tienie) | Pending callback | Afrikaans follow-up sent from business number. Interested on call. |
+| Studentech (Vernon) | Pending callback | Interested on calls, no WhatsApp replies. Business-number follow-up sent — move to voice, not text. |
+| Dayyaans Driving | DECLINED (closed) — but WARM REFERRER | Loves the site, asked for neutral business card to send referrals. **Business card overdue.** |
+| Garden Point Guest House | DECLINED | Earlier batch. |
+| Prana Love Yoga | DECLINED (closing studio) | — |
+| Stefanie Ross Photography | DECLINED (fully booked) | — |
+| TJs Driving Academy | No response | Business-number follow-up sent. |
+| Rightway Driving Academy | No response | Business-number follow-up sent. Disappearing-messages mode on. |
+| Skill on Wheels Academy | No response | Business-number follow-up sent. |
+| Revo Driving School | No response | Follow-up needed. |
+| MW Architects | First WhatsApp sent, no response | Business-number follow-up not yet sent — to be included in next batch. |
+| Rono Architects | First WhatsApp sent, no response | Same. |
+| Ndibali Interior Designs | First + business-number WhatsApps sent | Awaiting reply. |
+| Blue Sky Interior Design | First + business-number WhatsApps sent | Awaiting reply. |
+| CodeFlash Photography | First + business-number WhatsApps sent | Awaiting reply. |
+| Meintjes Catering | First + business-number WhatsApps sent | Awaiting reply. |
+| The Villa 442 (Hannah) | Business-number WhatsApp sent to owner's actual number | Awaiting reply. If silent by end of week, either follow up again or archive site for recycling. |
+| +27 81 402 7483 | Most engaged | Monthly-price objection still to handle. |
 
 ---
 
 ## KEY LEARNINGS
 
-- **Lovable auto-fix overwrites siteConfig team arrays.** When Lovable runs "Try to fix" on missing fields, it repopulates team arrays with the original template data (e.g. MEG team members appearing on Rono/Ndibali). Always restore via Claude Code after any Lovable "Try to fix" run. Check team, services, projects arrays specifically.
-- **Verify every domain before building.** Nexia SAB&T false positive — scraper flagged a broken branch URL but main site is live and professional. Manual spot-check required before committing build time.
-- **Scraper exclude list doesn't scale.** Filtering out already-contacted leads via a hardcoded name list in the script is fragile. Filter by Status field in the Google Sheet instead — mark contacted leads as "Sent" or "Closed" and exclude non-"New" rows.
-- **Established firms with working sites don't need us.** Even if the scraper flags a URL as broken, a firm with 8 SA offices and a working primary domain is not a prospect. Scraper should weight review count + website quality together, not just URL status.
-- **Facebook activity check catches dead businesses.** Would have caught Prana Love closing and Dayyaans no longer operating before build time was spent.
-- **Practice page component is hardcoded, not dynamic.** Fixing siteConfig.team alone is NOT enough on legacy-portfolio sites. The Practice.tsx (or Team.tsx) component contains a hardcoded array with MEG team members (Tienie van der Merwe, Lizette van der Merwe, Associate Architect). Must grep for these names in src/ and replace the hardcoded array with siteConfig.team.map(). This affects ALL 5 current legacy-portfolio recycles (MW, Lisa Rorich, Rono, Ndibali, Blue Sky) and needs fixing upstream in the archetype. Claude Code prompt for this fix exists in chat history.
+- **Lovable auto-fix overwrites siteConfig team arrays.** After Lovable "Try to fix" runs, check team/services/projects arrays.
+- **Verify every domain before building.** Nexia SAB&T was a false positive (national firm with working main site, scraper caught a broken branch URL). Spot-check required.
+- **Scraper exclude list doesn't scale.** Filter by Status field in the Sheet, not hardcoded names.
+- **Practice page component was hardcoded, not dynamic.** Fixing siteConfig.team alone was insufficient on legacy-portfolio child sites. Fix applied; still needs upstreaming.
+- **Facebook activity check catches dead businesses.** Would have caught Prana Love and Dayyaans before build time was spent.
+- **Established no-website businesses don't convert.** New or broken-website businesses convert better.
+- **Demo-first selling works.** Second paying client was found because the site was already built and shown.
+- **Lovable version history is always the first option.** Bad Lovable result → revert, not rebuild.
+- **Batch/consolidate before acting.** All issues listed → one clean prompt → paste once.
+- **GitHub edits over Lovable prompts for small fixes.** Auto-deploys in ~60s, no credit cost.
 
 ---
 
-## DESIGN SYSTEM — BRAND RESEARCH FIRST (CRITICAL)
+## DESIGN SYSTEM — BRAND RESEARCH FIRST
 
-**April 2026 lesson learned:** Built 5 consecutive sites using generic archetype-default palettes (all variations of green/cream/sage). Ian flagged it: "you keep using green and pastel green." Every site looked like a template blast.
+**Rule:** research client's actual brand colors (Facebook cover, Instagram grid, logo, existing site) BEFORE defaulting to an archetype palette. If nothing is found, build a character-driven palette from a specific personality observation. Archetype defaults are last resort only. Never use the same default palette twice in a row.
 
-**The fix (codified in SKILL.md):**
-1. Research client's actual brand colors from Facebook cover, Instagram grid, Google profile photos, existing website, logo
-2. If nothing found, build a character-driven palette from a specific personality observation (e.g. Gold Reef heritage for B&B near Gold Reef City, road-sign yellow for a driving school)
-3. Archetype defaults are LAST RESORT ONLY
-4. Never use the same default palette twice in a row
-
-**Palettes applied to current sites:**
+**Palettes in use:**
 - Prana Love: "Coastal Dawn" — apricot #E89B6C + ocean navy #1A2942
 - Garden Point: "Gold Reef" — burnished gold #B8860B + wine burgundy #6B2424
-- MEG Architects: "Architectural Ink" — monochrome + oxide red #B85A3E accent
+- MEG Architects: "Architectural Ink" — monochrome + oxide red #B85A3E
 - Studentech: "K53 Yellow" — bold yellow #FFD60A + black
-
----
-
-## AUTOMATION STACK — PLANNED (WEEKEND SETUP, STILL OUTSTANDING)
-
-**Architecture decided:** Airtable (data) + n8n self-hosted (orchestration) + Claude Code (reasoning) + Vercel (production hosting) + GitHub. WhatsApp stays manual.
-
-**Bundle status:**
-- `~/.claude/skills/solusite-build-pipeline/SKILL.md` — **INSTALLED** ✅
-- `~/Documents/lead-scraper/scraper_stage2_website_checker_v2.py` — **saved, not yet run**
-- `AUTOMATION_SETUP.md` — guide saved, not yet executed
-
-**Remaining setup steps (do anytime — not blocked to a specific chat):**
-1. Create Airtable Solusite Pipeline base (schema in AUTOMATION_SETUP.md)
-2. Install n8n locally: `npm install -g n8n && n8n start`
-3. Install n8n-MCP: clone `github.com/czlonkowski/n8n-mcp`, add to `~/.claude/mcp_settings.json`
-4. Run Stage 2 v2 overnight (Playwright)
-5. Build first n8n workflow (prompt provided in AUTOMATION_SETUP.md)
-
-**Important:** This work is NOT native to any specific chat. Any chat with Claude Code access can pick it up. Ian can come back to it after current sales batch validates conversion.
-
----
-
-## HANDYMANDIRECT (CLIENT: VINCENT)
-
-Active React/Supabase rebuild on Lovable.dev. Repo: `Spies-ang/handymandirectv2`. Phase 2 development underway and approved. Completed: Premium Services reorder, experience-tier colour coding, trade page architecture refactor, Trades dropdown, tier-specific booking flows, scrollable blog feed window. Pricing references removed from trade pages. Owned by separate chat.
+- Villa 442: "Private Retreat" — warm slate navy + terracotta + linen cream
+- Solusite brand: #3B82F6 blue on #0A0A0A black (Fraunces + Instrument Serif italic + JetBrains Mono)
 
 ---
 
 ## TOOLS & RESOURCES
 
-- **Build:** Lovable.dev (React + Supabase), GitHub `Spies-ang` (KEEP REPOS PRIVATE)
+- **Build:** Lovable.dev (React + Supabase), GitHub `Spies-ang` (repos PRIVATE)
 - **Local dev:** Claude Code (Terminal), MacBook
-- **Data / scraping:** Python (Google Places API, key `AIzaSyCr65TnL51BTJeZ6b-jfh9ernZdYQnRuAM`), Google Sheets (target `1yOjcFLNigV2Rg6PD5Ql5sDMQCOgY5_r0WPmZAJNLHeI`), OAuth via `client_secret.json`
-- **Design / docs:** Canva MCP, ReportLab
+- **Data / scraping:** Python (Google Places API key `AIzaSyCr65TnL51BTJeZ6b-jfh9ernZdYQnRuAM`), Google Sheets ID `1yOjcFLNigV2Rg6PD5Ql5sDMQCOgY5_r0WPmZAJNLHeI`, OAuth via `client_secret.json`
+- **Design / docs:** Canva MCP (Solusite logo: asset ID `MAE4eMe-2NE`), ReportLab
 - **Day job stack:** Microsoft Fabric, Azure Data Factory, D365 F&O, SQL Server
-- **Markets:** South Africa (Afrikaans + English)
 - **Google Cloud trial:** $8.59 spent, $291 remaining, expires 2026-05-19
-- **Solusite landing page assets (22 April 2026):** HTML source at /mnt/user-data/outputs/solusite-media.html (1031 lines). WhatsApp Business assets: whatsapp_profile.png (dark diamond on #0A0A0A with halo), whatsapp_profile_light.png (off-white alt), catalog_01_build.png through catalog_05_rebuild.png (5 catalog items matching landing page visual system). Business description, status line, catalog item copy all in chat transcript. Brand colour updated from #2B7BCC (legacy HandymanDirect invoice) to #3B82F6 for all new assets. Typography: Fraunces display + Instrument Serif italic + JetBrains Mono.
 
 ---
 
@@ -350,97 +233,95 @@ Active React/Supabase rebuild on Lovable.dev. Repo: `Spies-ang/handymandirectv2`
 1. **Lovable RLS bug:** All Supabase RLS policies generate as RESTRICTIVE. After every prompt → Security → "Try to fix all (Free)"
 2. **Always `.maybeSingle()` not `.single()`** — `.single()` throws on zero rows
 3. **Address fields:** `GooglePlacesAutocomplete` restricted to `{ country: "za" }`
-4. **NEVER commit API keys to public repos** — keep repos PRIVATE
+4. **NEVER commit API keys to public repos** — keep business repos PRIVATE. The `solusite-context` repo is an exception (public by design, contains no secrets).
 5. **Prerender.io required** on every Lovable site before SEO matters
 6. **Disable email confirmation** in Supabase during testing (4 emails/hour limit)
 7. **Always add fallback `navigate()`** after role fetches
-8. **GitHub edits preferred** over Lovable prompts for simple fixes (free, auto-deploys 60s)
-9. **When Lovable prompt breaks something** → revert via version history (free), don't rebuild
+8. **GitHub edits preferred** over Lovable prompts for simple fixes
+9. **When Lovable prompt breaks something** → revert via version history, don't rebuild
 10. **Long multi-change Lovable prompts break** — be surgical, single-section changes only
 11. **Color swap prompts** must say "do not touch siteConfig.ts, do not regenerate sections"
-12. **Browser chats can't read private repos** — temporarily make them public, or paste the file contents into the chat
-13. **Exposed token to rotate:** `https://github.com/settings/tokens` (look for `ghp_skzIqq0...`) — manual browser step
-14. **Lead-scraper remote URL already clean** (no PAT embedded)
-15. **Stage 2 scraper false-positive rate is ~27%** on modern JS-rendered sites. ALWAYS manually verify each lead via web search before writing siteConfig or briefing cards. Check: does the business have a working website at a URL the scraper missed? Is it a franchise/subsidiary of a larger brand? Is it a solo operator below review threshold? Is it a direct competitor (agency, graphic designer, photographer)?
-16. **Assistant verification mandate**: Any future chat producing lead qualification output MUST run web_search on each lead before passing judgement. Industry-category qualification from scraper metadata alone is insufficient — it missed KayShots/Royal Decor/Boulevard/Bigfoot in this batch. Verification checks: working website status, owner name, scale (solo/franchise/corporate), review accuracy, competitive overlap.
+12. **Browser chats can read `solusite-context` (public)**; all other repos require Claude Code (authenticated) or temporary public toggling, or paste-in-chat
+13. **Exposed token to rotate:** `https://github.com/settings/tokens` — old `ghp_skzIqq0...` still listed as open item
+14. **Geography is not a lead filter.** Leads come from all 4 cities. The "no Pretoria in copy" rule is about client-facing text only.
+15. **Verify every lead with web_search before building.** ~27% scraper false-positive rate means metadata qualification alone is insufficient.
+16. **Facebook activity check** is a pre-build hard gate. Skip leads with no recent activity or closure posts.
 
 ---
 
 ## MULTI-CHAT WORKFLOW
 
-| Surface | Role | Has bash/git tools | Can read private repos |
+| Surface | Role | bash/git | Reads private repos |
 |---|---|---|---|
-| Claude.ai browser — strategy chat | Strategy, research, prompts, handover updates | No | No |
-| Claude.ai browser — recycling chat | Template recycling, lead selection, prompt writing | No | No |
+| Claude.ai browser — strategy chat | Strategy, research, prompts | No | No |
+| Claude.ai browser — recycling chat | Template recycling, lead selection | No | No |
 | Claude.ai browser — HandymanDirect chat | Vincent's client work | No | No |
 | Claude Code (Terminal) | All build/edit/deploy/git execution | Yes | Yes (authenticated) |
 | Lovable chat panel | Per-project UI changes | Yes (Lovable-specific) | Yes (authenticated) |
 
-Browser chats write prompts. Claude Code executes them. Don't paste browser-chat prompts into Claude Code Terminal or vice versa.
-
-**For recycling chats:** the strategy chat or recycling chat can write the site config and Claude Code prompt, but if it needs to read a private repo first, either (a) temporarily make the repo public, (b) paste the file contents into the chat, or (c) Ian asks Claude Code to read the file and paste it back into the browser chat.
+Browser chats write prompts. Claude Code executes them.
 
 ---
 
 ## PENDING / ON THE HORIZON
 
 **Immediate — sales:**
-- [ ] Send batch 2 WhatsApps (7 messages — MW, Lisa Rorich, Rono, Ndibali, Blue Sky, CodeFlash, Meintjes — phone numbers ready in sheet)
-- [ ] Reply to Lisa Rorich with pricing (she asked for fee structure)
-- [ ] Schedule Wendy (Lat Wai) callback
-- [ ] Follow-up calls for batch 1 non-responders: TJs, Rightway, Skill on Wheels, Revo
+- Business card for Dayyaan (warm referrer)
+- Schedule Wendy (Lat Wai) follow-up
+- Second-round WhatsApps for MW, Rono, Revo (not yet sent on business number)
+- Wait on responses from Batch 2 business-number follow-ups; triage by end of week
 
 **Immediate — pipeline:**
-**Current lead batch (22 April 2026) — VERIFICATION IN PROGRESS**
-Pulled 15 leads via fetch_new_leads.py. Ian selected 10 to build for (skipped #3 K2much, #14 Addon). Verification pass identified 3 scraper false positives (working sites misflagged as WEBSITE_UNREACHABLE):
-  - #8 KayShots VisualZ — has kayshots.co / kayshots.com live, also a competitor (photography/production). SKIP.
-  - #10 Royal Decor & Turfs — has royaldecorandturfs.co.za live, 5-star on Bark. SKIP.
-  - #11 Boulevard Storage — has boulevardstorage.co.za live, Faircape Group subsidiary. SKIP.
-  - #1 Bigfoot Car Detailing — has bigfootdetailing.co.za live, SA subsidiary of Rupes S.p.a. (Italian detailing brand founded 1968, SA branch founded 2016 by Vishal Nair). Franchise with multiple locations. SKIP.
+- Re-verify current 15-lead batch using correct criteria (NOT geography-based)
+- Research and build remaining validated leads
+- Pull next batch after current batch processed
 
-Confirmed false-positive rate ~27% in this batch — Stage 2 v1 requests-based scraper misreads modern JS-rendered sites. Stage 2 v2 Playwright rewrite is at ~/Documents/lead-scraper/scraper_stage2_website_checker_v2.py, NOT YET RUN. Should be run before the next batch pull.
+**Build fixes:**
+- Push Practice-page component fix upstream to `legacy-portfolio` archetype so future recycles inherit it
+- Meintjes Catering structural fix (B&B → catering language in Home.tsx and Book.tsx)
+- Solusite landing page Lovable fix (hero headline visibility, footer overlap, business number, swap Ndibali → Blue Sky in work examples) — prompt already sent, verify on deploy
 
-Still to verify in this batch (flagged for Ian to check before build):
-  - #2 Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT. Build with split-payment pitch, not full R5k upfront.
-  - #4 Skyscape Architects (Pretoria) — NOT VERIFIED YET
-  - #5 Sheikh Motors (Pretoria) — VERIFIED as thin footprint. Ian to call or drive past before build decision.
-  - #6 La-Mich Hair & Beauty Salon (Johannesburg) — NOT VERIFIED YET
-  - #7 Plain Blue Wedding Photo & Film (Cape Town) — NOT VERIFIED YET
-  - #9 OE Nails Beauty Salon (Pretoria) — NOT VERIFIED YET, Ian needs to scroll their Facebook to confirm proper salon vs. home operator
-  - #12 Nijhuis Attorneys (Johannesburg) — NOT VERIFIED YET
-  - #13 Sky Travel ZA (Johannesburg) — NOT VERIFIED YET
-  - #15 Silverline Accounting / Sal-Tax (Pretoria) — NOT VERIFIED YET, Ian needs to check main site isn't separate working URL (Nexia-style false positive risk)
+**Template hardening:**
+- Harden `legacy-portfolio` (missing fields + upstream fix)
+- Harden `ross-images-studio` (missing fields)
 
-**Build fixes needed:**
-- [ ] Solusite landing page — Lovable deployment at solusite-media.lovable.app. Domain solusitemedia.co.za purchased on GoDaddy, propagating. Stage 3 enhancement prompts (cursor glow, headline shimmer, work hover iframe, live status ticker) sent to Lovable. Pending fix prompt: headline visibility bug + footer overlap + add business number +27 66 269 8553 + headline copy change to "Stop losing customers to a boring website" with "boring website" as blue italic accent + swap Ndibali for Blue Sky Interior Design in work list.
-- [ ] Fix Practice page hardcoded team component on all 5 architect/interior sites (MW, Lisa Rorich, Rono, Ndibali, Blue Sky) — grep for "Tienie" or "van der Merwe" in src/, replace hardcoded array with siteConfig.team.map(). Then push same fix upstream to legacy-portfolio archetype.
-- [ ] Blue Sky Interior — Lovable restyle (interior design imagery, #2D5B4E sage primary)
-- [ ] CodeFlash Photography — swap placeholder images with photography studio imagery (Lovable prompt)
-- [ ] Meintjes Catering — structural fix (B&B → catering language in Home.tsx and Book.tsx, same pattern as Lat Wai venue conversion)
+**Infrastructure:**
+- Move `strip_archetype.py` from `~/Downloads/` to `~/Documents/solusite-context/scripts/`
+- Run it on `legacy-portfolio` to produce first clean archetype repo
+- Apply Stage 2 scoring fix to main `scraper_stage2_website_checker.py`
+- Run Stage 2 v2 Playwright overnight
+- Add Stage 2 batch-save / resume
+- Revert La Belle hero via Lovable version history
+- Finish Riakona Electrical templating (5 files remaining)
+- Rotate exposed GitHub token
 
-**Template hardening (do before next batch that uses these archetypes):**
-- [ ] Harden `legacy-portfolio` — add all missing siteConfig fields so Lovable auto-fix doesn't trigger and overwrite team/services/projects
-- [ ] Harden `ross-images-studio` — same issue, missing fields
-
-**Short-term:**
-- [ ] strip_archetype.py script written and saved to Ian's Downloads. Needs to be moved to ~/Documents/solusite-context/scripts/. Single-file Python 3.8+ stdlib-only. Sequential scan→report→pause→skeletonize flow. Outputs SCAN_REPORT.md and MANUAL_FIXES.md. Known patterns covered: SA phone regex, emails, local image imports, hardcoded arrays (MEG team bug), SA city names, siteConfig import checks. MANUAL_REVIEW_KEYS list flags team/services/projects/packages/testimonials/images/rooms/directions/trustBar/faqs/suburbs/emails for human review. Safety: refuses to run with uncommitted git changes unless --force, backs up siteConfig to .strip_backup/ before rewriting. Tested locally — NOT YET RUN on real repo.
-- [ ] First archetype creation batch queued — approach: duplicate good non-recycled repos on GitHub → rename to archetype-{type} → strip → commit. Unlimited count (no cap at 5-6). Priority order: professional-portfolio → catering → photography-studio → event-venue → driving-school → new builds.
-- [ ] Run Stage 2 v2 Playwright overnight
-- [ ] Set up Airtable base
-- [ ] Install n8n + n8n-MCP
-- [ ] Revert La Belle hero (beauty-bloom-template) via Lovable version history
-- [ ] Finish Riakona Electrical templating (5 files remaining)
+**Automation stack (Airtable + n8n + Claude Code + Vercel + GitHub):**
+- Create Airtable Solusite Pipeline base (schema in AUTOMATION_SETUP.md)
+- Install n8n locally: `npm install -g n8n && n8n start`
+- Install n8n-MCP: clone `github.com/czlonkowski/n8n-mcp`, add to `~/.claude/mcp_settings.json`
+- Build first workflow (manual trigger → Airtable → Claude subagent → site generation → Airtable update)
 
 **Medium-term:**
-- [ ] Build first n8n workflow (manual trigger → Airtable → Claude subagent → site generation → Airtable update)
-- [ ] Stage 1c social media scraper for Silverbrook Media
-- [ ] Fix Stage 2 v1 scoring logic (false positives on React/Next.js sites)
-- [ ] Switch scraper exclude logic from hardcoded name list → Status field filter in Google Sheet
+- Stage 1c social media scraper for Silverbrook Media
+- Switch scraper exclude logic from hardcoded name list → Status field filter
 
 **Longer-term:**
-- [ ] Hire 2nd salesman if conversion rate validates at scale
-- [ ] Build templated archetype for: Restaurant (standalone), Trades refresh, Health & Fitness
-- [ ] Productize the offering: standard package, standard upsells, standard onboarding
+- Hire 2nd salesman if conversion rate validates
+- Build archetypes for: Restaurant, Trades refresh, Health & Fitness
+- Productize the offering
 
 ---
 
+## SILVERBROOK MEDIA (FIANCÉE'S BUSINESS)
+
+Social media management. Higher-budget targets: hotels, event venues, tour operators, travel agencies, spas, restaurants, wedding photographers, real estate agents, interior designers, architects. Stage 1c scraper deferred until Solusite pitch validates through real calls.
+
+---
+
+## HANDYMANDIRECT (CLIENT: VINCENT)
+
+Active React/Supabase rebuild on Lovable.dev. Repo: `Spies-ang/handymandirectv2`. Phase 2 largely complete. Owned by separate chat.
+
+---
+
+*End of corrected HANDOVER.md. This file is the last single-source handover; future state lives in RULES.md + STATE.md + DECISIONS.md + CONTEXT.md.*
