@@ -38,26 +38,34 @@
 
 ## CURRENT LEAD BATCH (22 April 2026)
 
-15 pulled via `fetch_new_leads.py`. Ian selected 10 to build for. Verification pass identified 4-5 scraper false positives.
+15 pulled via `fetch_new_leads.py`. Ian selected 10 to build for.
 
 **Confirmed false positives (skip, working websites exist):**
 - Bigfoot Car Detailing — `bigfootdetailing.co.za` live, Rupes SA subsidiary
 - KayShots VisualZ — `kayshots.co` live + photography competitor
-- Royal Decor & Turfs — `royaldecorandturfs.co.za` live
 - Boulevard Storage — `boulevardstorage.co.za` live, Faircape subsidiary
 
-**Still to verify (Ian checks before build):**
-- Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT — split-payment pitch
-- Skyscape Architects (Pretoria)
-- Sheikh Motors (Pretoria) — VERIFIED thin footprint, Ian to drive past
-- La-Mich Hair & Beauty Salon (Joburg)
-- Plain Blue Wedding Photo & Film (Cape Town)
-- OE Nails Beauty Salon (Pretoria) — Ian to check Facebook for proper-salon vs home-operator
-- Nijhuis Attorneys (Joburg)
-- Sky Travel ZA (Joburg)
-- Silverline Accounting / Sal-Tax (Pretoria) — Nexia-style false-positive risk, check for separate working main site
+**Reinstated under §2.9:**
+- Royal Decor & Turfs — site exists but poor quality; qualifies as a gap under §2.9. No matching archetype. Proposed Archetype #7 (Outdoor Transformation / Landscaping). Build deferred pending 2+ leads in category. Awaiting Ian decision.
 
-**Note on this batch:** One prior chat rejected leads for not being based in Pretoria. This is a rule violation (see RULES.md §2.1). Re-verify the full list against the correct criteria, not geography.
+**Confirmed skip (not a false positive — operational):**
+- Sheikh Motors — no matching archetype (Trades not production-ready) + weak pitch angle. Not a rule-based industry deprioritization. Re-evaluate when Trades archetype is complete.
+
+**Building:**
+- Sky Travel ZA — BUILDING. garden-gateways adapted for tour operator (rooms → experiences, amenities → highlights, booking → enquiry). Palette: Sundowner Gold (#C4692A + #2D1F0E + #F7F0E6). Structural flag: rates table may need removal if auto-generated. Full Lovable prompt + WhatsApp produced.
+
+**Prompts produced, builds not yet started, WhatsApps not yet sent:**
+- La-Mich Hair & Beauty Salon — Lovable recycle prompt + WhatsApp produced. Palette: Champagne Rose.
+- Skyscape Architects — Lovable recycle prompt + WhatsApp produced. Palette: Blueprint.
+- Nijhuis Attorneys — Lovable recycle prompt + WhatsApp produced. Palette: Legal Navy.
+- Silverline Accounting / Sal-Tax — Lovable recycle prompt + WhatsApp produced. Palette: Accountant's Edge.
+
+**Palette decision pending:**
+- OE Nails Beauty Salon — two options on table: Inkwell & Ivory (#2C2C2C + #D4A5A5) vs Terracotta Studio (#C97B6A + #3D2B1F). Ian to confirm before build.
+
+**Still to verify:**
+- Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT — split-payment pitch
+- Plain Blue Wedding Photo & Film (Cape Town) — not yet verified
 
 ---
 
@@ -67,7 +75,7 @@
 |---|---|---|---|---|---|
 | 1 | Education & Training | `pass-prep-pro` | studentechdrivertraining.lovable.app | ✅ | Commit `077d8a8` |
 | 2 | Hospitality | `garden-gateways` | gardenpointguesthouse.lovable.app | ⚠️ | Location.tsx per-repo fix needed |
-| 3 | Professional / Portfolio | `legacy-portfolio` | megarchitects.lovable.app | ⚠️ | Child sites fixed; upstream fix pending |
+| 3 | Professional / Portfolio | `legacy-portfolio` | megarchitects.lovable.app | ⚠️ | Child sites fixed; upstream fix pending. Recycle prompts for Skyscape/Nijhuis/Silverline pre-fill all arrays as workaround. |
 | 4 | Photography | `ross-images-studio` | — | ❌ | Missing fields |
 | 5 | Beauty & Wellness | `prana-template-suite` | pranaloveyoga.lovable.app | — | — |
 | 6 | Trades | `roelfsautoelectrical` + `riakonaelectrical` | — | — | Roelf done, Riakona 80% |

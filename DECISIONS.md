@@ -85,6 +85,16 @@
 
 **2026-04-22** — RULE: Documentation Protocol codified in RULES.md Section 1. Every chat bootstraps from RULES + STATE, confirms back before starting work, produces end-of-session update block autonomously. `solusite-context` made public (contains no secrets). [Consolidating website scraper project context — successor chat]
 
+**2026-04-23** — Palette discipline enforced across 5-lead batch: unique palette per site, no consecutive greens, no archetype defaults. Names assigned: Champagne Rose (La-Mich), Inkwell & Ivory or Terracotta Studio (OE Nails — pending), Blueprint (Skyscape), Legal Navy (Nijhuis), Accountant's Edge (Silverline). [22 April batch chat]
+
+**2026-04-23** — Sheikh Motors reasoning corrected: skip is due to no matching archetype + weak pitch angle, not a rule-based industry deprioritization. Auto repair is not on the deprioritized list. [22 April batch chat]
+
+**2026-04-23** — Royal Decor & Turfs reinstated as live lead under §2.9. Proposed Archetype #7: Outdoor Transformation / Landscaping. Build deferred pending 2+ leads in category. [22 April batch chat]
+
+**2026-04-23** — Sky Travel ZA: garden-gateways adapted for tour operator use. Rooms → experiences, amenities → highlights. Rates table flagged as structural risk — revert and replace with enquiry section if auto-generated. Palette: Sundowner Gold. [22 April batch chat]
+
+**2026-04-23** — RULES.md §1 conflict resolution rule added: live Ian decision overrides stale STATE. Triggered by Royal Decor drift where Sonnet defaulted to STATE "false positive" despite Ian's live override. [Opus strategy chat]
+
 ---
 
 *Append new decisions here. Never edit existing entries.*
