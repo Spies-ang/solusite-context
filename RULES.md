@@ -114,6 +114,10 @@ The rule also applies in reverse: if Ian confirms something STATE marks as compl
 
 2.9. **A "working website" means the client wouldn't need a new one.** A site that is under construction, showing a "we are redesigning" notice, a dead Yolasite or Squarespace starter URL, a directory-only listing, a visually broken/outdated site, or any other state where Ian would still pitch them a new one — is a GAP, not a working site. When in doubt, imagine showing the existing site to the client: if they'd agree it's inadequate, it's a gap. The §2.3 verification check is asking "does a usable site exist that makes this lead pointless?" — not "does any domain resolve?"
 
+2.10. **Mobile-format phone is required for WhatsApp outreach.** A SA phone number starting with 06x, 07x, or 08x is mobile and works for WhatsApp. Numbers starting with 0x followed by a non-mobile prefix (010, 011, 012, 013, 014, 015, 016, 017, 018, 021, 022, 023, 027, 028, 031, 032, 033, 034, 035, 036, 039, 040-049, 051, 053, 054, 056, 057, 058) are landlines and CANNOT receive WhatsApp. Lead qualification reports MUST flag landline-only leads explicitly. For landline-only leads, the chat must search for an email address before passing the lead through — Facebook About section, Google Business Profile, the lead's existing website if any, professional directories (Procompare, ZA Directory, Brabys), and SACAP/IRBA/SAICA registry listings if industry-relevant. Outreach for landline-only leads becomes phone call + email follow-up, not WhatsApp.
+
+2.11. **Claude Code work on client-site repos commits directly to main, never to feature branches.** Lovable auto-deploys from main only. Feature branches do not deploy and create silent failure where edits appear committed but never go live. The only exception is the solusite-context repo where Ian writes to RULES.md manually — that's a documentation repo, not a client site. For all client-site repos: git checkout main, edit, commit, push origin main. No qc-cleanup-XXX branches, no feature branches, no PRs.
+
 ---
 
 ## SECTION 3 — CLIENT COMMUNICATIONS
