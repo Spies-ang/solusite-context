@@ -1,6 +1,6 @@
 # SOLUSITE — STATE
 
-**Last updated:** 22 April 2026, evening
+**Last updated:** 29 April 2026
 **Purpose:** Current reality only. No history. No plans. Overwritten every time state changes.
 **Write rule:** End-of-session update blocks from chats, applied via Claude Code.
 
@@ -33,39 +33,44 @@
 - Prana Love Yoga — declined (closing)
 - Stefanie Ross Photography — declined (fully booked)
 - Dayyaans Driving School — declined (no longer in business, but kept as referrer above)
+- Sky Travel ZA — declined, not interested (2026-04-29)
+- Florida Palms Guesthouse — confirmed false positive, site already live, no further action (2026-04-29)
 
 ---
 
-## CURRENT LEAD BATCH (22 April 2026)
+## CURRENT LEAD BATCH (28–29 April 2026)
 
-15 pulled via `fetch_new_leads.py`. Ian selected 10 to build for.
+12 leads across two batches (7 Ian-built + 5 Armand-built). All sites built and deployed. Outreach sent or scheduled as of 2026-04-29.
 
-**Confirmed false positives (skip, working websites exist):**
+**Confirmed false positives (closed):**
 - Bigfoot Car Detailing — `bigfootdetailing.co.za` live, Rupes SA subsidiary
 - KayShots VisualZ — `kayshots.co` live + photography competitor
 - Boulevard Storage — `boulevardstorage.co.za` live, Faircape subsidiary
+- Florida Palms Guesthouse — `floridapalms.co.za` live at time of outreach. Demo built unnecessarily. CLOSED.
 
-**Reinstated under §2.9:**
-- Royal Decor & Turfs — site exists but poor quality; qualifies as a gap under §2.9. No matching archetype. Proposed Archetype #7 (Outdoor Transformation / Landscaping). Build deferred pending 2+ leads in category. Awaiting Ian decision.
+**Closed — not interested:**
+- Sky Travel ZA — declined, not interested.
 
-**Confirmed skip (not a false positive — operational):**
-- Sheikh Motors — no matching archetype (Trades not production-ready) + weak pitch angle. Not a rule-based industry deprioritization. Re-evaluate when Trades archetype is complete.
+**WhatsApp sent — awaiting reply (mobile numbers confirmed):**
+- La-Mich Hair & Beauty Salon — 082 442 0014. Demo: la-mich-salon.lovable.app
+- OE Nails Beauty Salon — 067 034 7218. Demo: oe-nails-beauty-salon.lovable.app
+- Royal Decor & Turfs — 079 501 1362. Demo: royaldecorturfs.lovable.app
+- The Comb Club — 061 006 8106. Demo: thecombclub.lovable.app
+- Italian Panelbeaters — 011 615 9552. Demo: italianpanelbeaters.lovable.app
 
-**Building:**
-- Sky Travel ZA — BUILDING. garden-gateways adapted for tour operator (rooms → experiences, amenities → highlights, booking → enquiry). Palette: Sundowner Gold (#C4692A + #2D1F0E + #F7F0E6). Structural flag: rates table may need removal if auto-generated. Full Lovable prompt + WhatsApp produced.
+**Landline only — phone call required (no WhatsApp possible):**
+- Skyscape Architects — 012 346 8937. Demo: skyscape-blueprint.lovable.app
+- Nijhuis Attorneys — 010 630 0333. Demo: nijhuis-attorneys.lovable.app
+- Silverline Accounting / Sal-Tax — 012 543 3736. Demo: silverline-accounting.lovable.app
+- Cape Town Dental — 021 023 3950. Demo: capetowndental.lovable.app
+- Bayvet CC — 011 492 3477. Demo: bayvetcc.lovable.app
 
-**Prompts produced, builds not yet started, WhatsApps not yet sent:**
-- La-Mich Hair & Beauty Salon — Lovable recycle prompt + WhatsApp produced. Palette: Champagne Rose.
-- Skyscape Architects — Lovable recycle prompt + WhatsApp produced. Palette: Blueprint.
-- Nijhuis Attorneys — Lovable recycle prompt + WhatsApp produced. Palette: Legal Navy.
-- Silverline Accounting / Sal-Tax — Lovable recycle prompt + WhatsApp produced. Palette: Accountant's Edge.
+**Deprioritised (not skipped):**
+- Sheikh Motors — bottom of queue. Build pending Trades archetype completion.
 
-**Palette decision pending:**
-- OE Nails Beauty Salon — two options on table: Inkwell & Ivory (#2C2C2C + #D4A5A5) vs Terracotta Studio (#C97B6A + #3D2B1F). Ian to confirm before build.
-
-**Still to verify:**
-- Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT — split-payment pitch
-- Plain Blue Wedding Photo & Film (Cape Town) — not yet verified
+**Still to verify / on hold:**
+- Zeki Pups — VERIFIED, solo operator (Heather Edwards, COAPE DipCABT), 4 reviews, Tokai CT — split-payment pitch. Not in current build queue.
+- Plain Blue Wedding Photo & Film (Cape Town) — not yet verified.
 
 ---
 
@@ -79,6 +84,7 @@
 | 4 | Photography | `ross-images-studio` | — | ❌ | Missing fields |
 | 5 | Beauty & Wellness | `prana-template-suite` | pranaloveyoga.lovable.app | — | — |
 | 6 | Trades | `roelfsautoelectrical` + `riakonaelectrical` | — | — | Roelf done, Riakona 80% |
+| 7 | Outdoor Transformation / Landscaping | TBD — post Royal Decor build | — | — | Seeded by Royal Decor & Turfs build. Repo to be created after build completes. |
 | — | Beauty v1 | `beauty-bloom-template-54d0c7e3` | — | — | La Belle hero broken, needs Lovable revert |
 
 ### Clean archetype repos (created 2026-04-23)
@@ -116,6 +122,7 @@ All repos: MANUAL_FIXES.md and SCAN_REPORT.md committed. Next step per archetype
 5. **Exposed GitHub token** `ghp_skzIqq0...` still not rotated.
 6. **Stage 2 v2 Playwright** never run — every batch continues to pay the 27% false-positive tax.
 7. **Solusite landing page headline visibility bug** — fix prompt sent to Lovable, not yet verified on deploy.
+8. **Landline-only leads in current batch have no email addresses found yet** — Skyscape, Nijhuis, Silverline, Cape Town Dental, Bayvet CC. Per §2.10, email must be found before qualifying. Phone call outreach is blocked until email is in hand or explicitly waived.
 
 ---
 

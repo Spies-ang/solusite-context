@@ -103,6 +103,24 @@
 
 **2026-04-23** — LEARNING: archetype-photography is the cleanest source in the batch (0 critical findings) — already used Unsplash URLs, no local asset imports. ross-images-studio should be the benchmark pattern for future client builds. [Claude Code terminal]
 
+**2026-04-27** — Fresh Lovable builds chosen for full 22 April batch (7 sites). Recycle flow deferred to next batch. Reason: control + credits available for this run. [22 April batch chat]
+
+**2026-04-27** — Archetype #7 formally established: Outdoor Transformation / Landscaping. Royal Decor & Turfs is the seed build. Palette: Turf & Slate. Green usage is earned (product-specific) and must not appear on other archetype sites. [22 April batch chat]
+
+**2026-04-27** — Palette discipline enforced across 7-site batch. No green repeats across consecutive sites. Each palette named and rationale documented: Champagne Rose, Inkwell & Ivory, Blueprint, Legal Navy, Accountant's Edge, Sundowner Gold, Turf & Slate. [22 April batch chat]
+
+## 2026 — APRIL (continued)
+
+**2026-04-29** — RULES.md §2.10 added: mobile-format phone required for WhatsApp; landline-only leads must have email found before qualifying. Triggered by 5-of-12 sites in 28 April batch having landline-only numbers that were never flagged. [Opus strategy chat]
+
+**2026-04-29** — RULES.md §2.11 added: Claude Code work on client-site repos commits directly to main, never feature branches. Triggered by qc-cleanup-2026-04-28 branches across 4 repos that were never merged, leaving placeholder text live on production. [Opus strategy chat]
+
+**2026-04-29** — Sky Travel ZA: lead declined. Mark CLOSED in sheet. [Sonnet outreach chat]
+
+**2026-04-29** — Florida Palms Guesthouse: confirmed false positive (site live). Demo site built unnecessarily. Mark in sheet. Future learning: web-search verification step caught this only at outreach stage, should have caught before build. [Sonnet outreach chat]
+
+**2026-04-29** — Lovable URLs locked for current batch: sky-travel-za, skyscape-blueprint, oe-nails-beauty-salon, royaldecorturfs, la-mich-salon, nijhuis-attorneys, silverline-accounting, italianpanelbeaters, bayvetcc, floridapalmsguesthouse, thecombclub, capetowndental. All on .lovable.app subdomain. [Opus strategy chat]
+
 ---
 
 *Append new decisions here. Never edit existing entries.*
